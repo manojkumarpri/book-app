@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import bookRoutes from './server/routes/BookRoutes';
 
-config.config();
+config.config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
 
