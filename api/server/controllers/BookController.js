@@ -26,6 +26,7 @@ class BookController {
     }
     const newBook = req.body;
     try {
+      console.log("here new book ",newBook)
       const createdBook = await BookService.addBook(newBook);
       util.setSuccess(201, 'Book Added!', createdBook);
       return util.send(res);

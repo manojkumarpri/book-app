@@ -2,7 +2,7 @@ import config from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import bookRoutes from './server/routes/BookRoutes';
-
+console.log("here ")
 config.config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
