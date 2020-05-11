@@ -13,6 +13,7 @@ class BookService {
     try {
       return await database.Book.create(newBook);
     } catch (error) {
+      console.log("hre error",error)
       throw error;
     }
   }
