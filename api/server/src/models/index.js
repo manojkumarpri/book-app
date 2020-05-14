@@ -28,7 +28,10 @@ if (config.environment === 'production') {
         ssl: true,
         native: true
       },
-      logging: true
+      logging: true,
+      define: {
+        underscored: true
+      }
     }
   );
 } else {
@@ -56,5 +59,13 @@ Object.keys(db).forEach((modelName) => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+//Models/tables
+db.User = require('../models/user.js')(sequelize, Sequelize);
+db.Contactinfo = require('../models/contactinfo.js')(sequelize, Sequelize);
+  
+
+//Relations
+db.Contactinfo.belongsTo(db.User);
+db.User.hasOne(db.Contactinfo);
 
 export default db;
