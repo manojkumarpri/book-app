@@ -3,7 +3,7 @@ import database from '../src/models';
 class personeldetailsService {
   static async getAllpersoneldetailss() {
     try {
-      return await database.personeldetails.findAll();
+      return await database.personelDetails.findAll();
     } catch (error) {
       throw error;
     }
@@ -11,7 +11,7 @@ class personeldetailsService {
 
   static async addpersoneldetails(newpersoneldetails) {
     try {
-      return await database.personeldetails.create(newpersoneldetails);
+      return await database.personelDetails.create(newpersoneldetails);
     } catch (error) {
       console.log("hre error",error)
       throw error;
@@ -20,12 +20,12 @@ class personeldetailsService {
 
   static async updatepersoneldetails(id, updatepersoneldetails) {
     try {
-      const personeldetailsToUpdate = await database.personeldetails.findOne({
+      const personeldetailsToUpdate = await database.personelDetails.findOne({
         where: { memberid: Number(id) }
       });
 
       if (personeldetailsToUpdate) {
-        await database.personeldetails.update(updatepersoneldetails, { where: { memberid: Number(id) } });
+        await database.personelDetails.update(updatepersoneldetails, { where: { memberid: Number(id) } });
 
         return updatepersoneldetails;
       }
@@ -37,7 +37,7 @@ class personeldetailsService {
 
   static async getApersoneldetails(id) {
     try {
-      const thepersoneldetails = await database.personeldetails.findOne({
+      const thepersoneldetails = await database.personelDetails.findOne({
         where: { memberid: Number(id) }
       });
 
@@ -49,10 +49,10 @@ class personeldetailsService {
 
   static async deletepersoneldetails(id) {
     try {
-      const personeldetailsToDelete = await database.personeldetails.findOne({ where: { memberid: Number(id) } });
+      const personeldetailsToDelete = await database.personelDetails.findOne({ where: { memberid: Number(id) } });
 
       if (personeldetailsToDelete) {
-        const deletedpersoneldetails = await database.personeldetails.destroy({
+        const deletedpersoneldetails = await database.personelDetails.destroy({
           where: { memberid: Number(id) }
         });
         return deletedpersoneldetails;

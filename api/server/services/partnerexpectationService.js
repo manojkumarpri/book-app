@@ -3,7 +3,7 @@ import database from '../src/models';
 class partnerexpectationService {
   static async getAllpartnerexpectations() {
     try {
-      return await database.partnerexpectation.findAll();
+      return await database.partnerExpectation.findAll();
     } catch (error) {
       throw error;
     }
@@ -11,7 +11,7 @@ class partnerexpectationService {
 
   static async addpartnerexpectation(newpartnerexpectation) {
     try {
-      return await database.partnerexpectation.create(newpartnerexpectation);
+      return await database.partnerExpectation.create(newpartnerexpectation);
     } catch (error) {
       console.log("hre error",error)
       throw error;
@@ -20,12 +20,12 @@ class partnerexpectationService {
 
   static async updatepartnerexpectation(id, updatepartnerexpectation) {
     try {
-      const partnerexpectationToUpdate = await database.partnerexpectation.findOne({
+      const partnerexpectationToUpdate = await database.partnerExpectation.findOne({
         where: { memberid: Number(id) }
       });
 
       if (partnerexpectationToUpdate) {
-        await database.partnerexpectation.update(updatepartnerexpectation, { where: { memberid: Number(id) } });
+        await database.partnerExpectation.update(updatepartnerexpectation, { where: { memberid: Number(id) } });
 
         return updatepartnerexpectation;
       }
@@ -37,7 +37,7 @@ class partnerexpectationService {
 
   static async getApartnerexpectation(id) {
     try {
-      const thepartnerexpectation = await database.partnerexpectation.findOne({
+      const thepartnerexpectation = await database.partnerExpectation.findOne({
         where: { memberid: Number(id) }
       });
 
@@ -49,10 +49,10 @@ class partnerexpectationService {
 
   static async deletepartnerexpectation(id) {
     try {
-      const partnerexpectationToDelete = await database.partnerexpectation.findOne({ where: { memberid: Number(id) } });
+      const partnerexpectationToDelete = await database.partnerExpectation.findOne({ where: { memberid: Number(id) } });
 
       if (partnerexpectationToDelete) {
-        const deletedpartnerexpectation = await database.partnerexpectation.destroy({
+        const deletedpartnerexpectation = await database.partnerExpectation.destroy({
           where: { memberid: Number(id) }
         });
         return deletedpartnerexpectation;

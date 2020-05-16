@@ -5,15 +5,19 @@ const util = new Util();
 
 class astronimicdetailsController {
   static async getAllastronimicdetailss(req, res) {
+    console.log("here astronimic get")
     try {
       const allastronimicdetailss = await astronimicdetailsService.getAllastronimicdetailss();
+     console.log("allastronimicdetailss",allastronimicdetailss);
       if (allastronimicdetailss.length > 0) {
         util.setSuccess(200, 'astronimicdetailss retrieved', allastronimicdetailss);
       } else {
         util.setSuccess(200, 'No astronimicdetails found');
       }
+      console.log("here allastronimicdetailss",allastronimicdetailss)
       return util.send(res);
     } catch (error) {
+      console.log("here astronimic controller get err",error)
       util.setError(400, error);
       return util.send(res);
     }

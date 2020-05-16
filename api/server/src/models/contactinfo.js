@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     facebook:{
       type:DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     linkedin: {
       type:DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     UserMemberid:{
        type: DataTypes.INTEGER,

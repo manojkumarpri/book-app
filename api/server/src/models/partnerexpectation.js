@@ -86,12 +86,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     expectedmatchingstars: {
-      type:DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
+      type: DataTypes.STRING, 
+      get: function() {
+          return JSON.parse(this.getDataValue('expectedmatchingstars'));
+      }, 
+      set: function(val) {
+          return this.setDataValue('expectedmatchingstars', JSON.stringify(val));
+      },
+    allowNull: false
+   
     },
     expectedhoroscopematch:  {
-      type:DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
+      type: DataTypes.STRING, 
+      get: function() {
+          return JSON.parse(this.getDataValue('expectedhoroscopematch'));
+      }, 
+      set: function(val) {
+          return this.setDataValue('expectedhoroscopematch', JSON.stringify(val));
+      },
+    allowNull: false
     },
     diet: {
       type:DataTypes.STRING,

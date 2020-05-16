@@ -6,8 +6,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },  
     intrestedmemberid: {
-      type:DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.ARRAY(DataTypes.INTEGER), 
+    
+    allowNull: false
     }
   }, {});
   myinterest.associate = function(models) {

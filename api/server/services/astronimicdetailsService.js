@@ -3,15 +3,17 @@ import database from '../src/models';
 class astronimicdetailsService {
   static async getAllastronimicdetailss() {
     try {
-      return await database.astronimicdetails.findAll();
+      console.log("here astronimic service get")
+      return await database.astronimicDetails.findAll();
     } catch (error) {
+      console.log("here astronimic service get err",error)
       throw error;
     }
   }
 
   static async addastronimicdetails(newastronimicdetails) {
     try {
-      return await database.astronimicdetails.create(newastronimicdetails);
+      return await database.astronimicDetails.create(newastronimicdetails);
     } catch (error) {
       console.log("hre error",error)
       throw error;
@@ -20,12 +22,12 @@ class astronimicdetailsService {
 
   static async updateastronimicdetails(id, updateastronimicdetails) {
     try {
-      const astronimicdetailsToUpdate = await database.astronimicdetails.findOne({
+      const astronimicdetailsToUpdate = await database.astronimicDetails.findOne({
         where: { memberid: Number(id) }
       });
 
       if (astronimicdetailsToUpdate) {
-        await database.astronimicdetails.update(updateastronimicdetails, { where: { memberid: Number(id) } });
+        await database.astronimicDetails.update(updateastronimicdetails, { where: { memberid: Number(id) } });
 
         return updateastronimicdetails;
       }
@@ -37,7 +39,7 @@ class astronimicdetailsService {
 
   static async getAastronimicdetails(id) {
     try {
-      const theastronimicdetails = await database.astronimicdetails.findOne({
+      const theastronimicdetails = await database.astronimicDetails.findOne({
         where: { memberid: Number(id) }
       });
 
@@ -49,10 +51,10 @@ class astronimicdetailsService {
 
   static async deleteastronimicdetails(id) {
     try {
-      const astronimicdetailsToDelete = await database.astronimicdetails.findOne({ where: { memberid: Number(id) } });
+      const astronimicdetailsToDelete = await database.astronimicDetails.findOne({ where: { memberid: Number(id) } });
 
       if (astronimicdetailsToDelete) {
-        const deletedastronimicdetails = await database.astronimicdetails.destroy({
+        const deletedastronimicdetails = await database.astronimicDetails.destroy({
           where: { memberid: Number(id) }
         });
         return deletedastronimicdetails;

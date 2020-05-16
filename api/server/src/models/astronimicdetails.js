@@ -34,8 +34,16 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull: false
     },
+    
     suitablestars:  {
-      type:DataTypes.STRING,
+    //  type:DataTypes.ARRAY(JSON),
+      type: DataTypes.STRING, 
+        get: function() {
+            return JSON.parse(this.getDataValue('suitablestars'));
+        }, 
+        set: function(val) {
+            return this.setDataValue('suitablestars', JSON.stringify(val));
+        },
       allowNull: false
     }
   }, {});

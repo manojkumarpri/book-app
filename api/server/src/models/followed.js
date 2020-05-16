@@ -1,4 +1,5 @@
 'use strict';
+ var sequelize =require ('sequelize');
 module.exports = (sequelize, DataTypes) => {
   const followed = sequelize.define('followed', {
     memberid:{
@@ -6,8 +7,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },  
     followedmemberid:{
-      type:DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.ARRAY(DataTypes.INTEGER), 
+    
+    allowNull: false
     }
   }, {});
   followed.associate = function(models) {

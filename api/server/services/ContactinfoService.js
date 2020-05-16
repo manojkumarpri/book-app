@@ -11,6 +11,7 @@ class ContactinfoService {
 
   static async addContactinfo(newContactinfo) {
     try {
+      console.log("here newContactinfo in cointact",newContactinfo)
       return await database.Contactinfo.create(newContactinfo);
     } catch (error) {
       console.log("hre error",error)
@@ -22,11 +23,11 @@ class ContactinfoService {
     try {
       console.log("id"+id+"updateContactinfo",updateContactinfo)
       const ContactinfoToUpdate = await database.Contactinfo.findOne({
-        where: { UserId: Number(id) }
+        where: { UserMemberid: Number(id) }
       });
 
       if (ContactinfoToUpdate) {
-        await database.Contactinfo.update(updateContactinfo, { where: { UserId: Number(id) } });
+        await database.Contactinfo.update(updateContactinfo, { where: { UserMemberid: Number(id) } });
 
         return updateContactinfo;
       }
@@ -39,7 +40,7 @@ class ContactinfoService {
   static async getAContactinfo(id) {
     try {
       const theContactinfo = await database.Contactinfo.findOne({
-        where: { UserId: Number(id) }
+        where: { UserMemberid: Number(id) }
       });
 
       return theContactinfo;
@@ -50,11 +51,11 @@ class ContactinfoService {
 
   static async deleteContactinfo(id) {
     try {
-      const ContactinfoToDelete = await database.Contactinfo.findOne({ where: { UserId: Number(id) } });
+      const ContactinfoToDelete = await database.Contactinfo.findOne({ where: { UserMemberid: Number(id) } });
 
       if (ContactinfoToDelete) {
         const deletedContactinfo = await database.Contactinfo.destroy({
-          where: { UserId: Number(id) }
+          where: { UserMemberid: Number(id) }
         });
         return deletedContactinfo;
       }

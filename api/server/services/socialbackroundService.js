@@ -3,7 +3,7 @@ import database from '../src/models';
 class socialbackroundService {
   static async getAllsocialbackrounds() {
     try {
-      return await database.socialbackround.findAll();
+      return await database.socialBackround.findAll();
     } catch (error) {
       throw error;
     }
@@ -11,7 +11,7 @@ class socialbackroundService {
 
   static async addsocialbackround(newsocialbackround) {
     try {
-      return await database.socialbackround.create(newsocialbackround);
+      return await database.socialBackround.create(newsocialbackround);
     } catch (error) {
       console.log("hre error",error)
       throw error;
@@ -20,12 +20,12 @@ class socialbackroundService {
 
   static async updatesocialbackround(id, updatesocialbackround) {
     try {
-      const socialbackroundToUpdate = await database.socialbackround.findOne({
+      const socialbackroundToUpdate = await database.socialBackround.findOne({
         where: { memberid: Number(id) }
       });
 
       if (socialbackroundToUpdate) {
-        await database.socialbackround.update(updatesocialbackround, { where: { memberid: Number(id) } });
+        await database.socialBackround.update(updatesocialbackround, { where: { memberid: Number(id) } });
 
         return updatesocialbackround;
       }
@@ -37,7 +37,7 @@ class socialbackroundService {
 
   static async getAsocialbackround(id) {
     try {
-      const thesocialbackround = await database.socialbackround.findOne({
+      const thesocialbackround = await database.socialBackround.findOne({
         where: { memberid: Number(id) }
       });
 
@@ -49,10 +49,10 @@ class socialbackroundService {
 
   static async deletesocialbackround(id) {
     try {
-      const socialbackroundToDelete = await database.socialbackround.findOne({ where: { memberid: Number(id) } });
+      const socialbackroundToDelete = await database.socialBackround.findOne({ where: { memberid: Number(id) } });
 
       if (socialbackroundToDelete) {
-        const deletedsocialbackround = await database.socialbackround.destroy({
+        const deletedsocialbackround = await database.socialBackround.destroy({
           where: { memberid: Number(id) }
         });
         return deletedsocialbackround;

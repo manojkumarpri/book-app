@@ -6,8 +6,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },  
     ignoredmemberid: {
-      type:DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.ARRAY(DataTypes.INTEGER), 
+    
+    allowNull: false
     }
   }, {});
   ignored.associate = function(models) {

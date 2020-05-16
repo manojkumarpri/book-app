@@ -18,7 +18,7 @@ class UserService {
 
         
         const resObj = users.map(user => {
-              console.log("here full",user.Contactinfo)
+              console.log("here full",user)
           //tidy up the user data
           return Object.assign(
             {},
@@ -79,11 +79,11 @@ return arr;
   static async updateUser(id, updateUser) {
     try {
       const UserToUpdate = await database.User.findOne({
-        where: { id: Number(id) }
+        where: { memberid: Number(id) }
       });
       await contactService.updateContactinfo(id,updateUser.contactobj);
       if (UserToUpdate) {
-        await database.User.update(updateUser, { where: { id: Number(id) } });
+        await database.User.update(updateUser, { where: { memberid: Number(id) } });
 
         return updateUser;
       }
@@ -98,7 +98,7 @@ return arr;
 
     try {
       const theUser = await db.User.findOne({
-        where: { id: Number(id) },
+        where: { memberid: Number(id) },
         include: [
           {
             model: db.Contactinfo
@@ -116,11 +116,11 @@ console.log("here id",theUser)
 
   static async deleteUser(id) {
     try {
-      const UserToDelete = await database.User.findOne({ where: { id: Number(id) } });
+      const UserToDelete = await database.User.findOne({ where: { memberid: Number(id) } });
       await contactService.deleteContactinfo(id);
       if (UserToDelete) {
         const deletedUser = await database.User.destroy({
-          where: { id: Number(id) }
+          where: { memberid: Number(id) }
         });
         return deletedUser;
       }
