@@ -9,14 +9,7 @@ const router = Router();
  *
  
  *
- * @apiSuccess {String} firstname Firstname of the User.
- * @apiSuccess {String} lastname  Lastname of the User.
- * @apiSuccess {String} gender  gender of the User. 
- * @apiSuccess {DATE} dob  dob of the User.
- * @apiSuccess {String} onbehalf  onbehalf of the User. 
- * @apiSuccess {String} password  password of the User.
- * * @apiSuccess {boolean} premium  premium of the User. 
- * @apiSuccess {object} Contactinfo  Contactinfo of the User. 
+ 
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
