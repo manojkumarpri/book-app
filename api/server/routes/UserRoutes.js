@@ -61,7 +61,7 @@ router.get('/', UserController.getAllUsers);
  * @apiSuccess {String} onbehalf  onbehalf of the User. 
  * @apiSuccess {String} password  password of the User.
  * * @apiSuccess {boolean} premium  premium of the User. 
- * @apiSuccess {object} Contactinfo  Contactinfo of the User. 
+ * @apiSuccess {object} contactobj  contactobj of the User. 
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
