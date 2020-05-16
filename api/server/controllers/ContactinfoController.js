@@ -31,6 +31,7 @@ class ContactinfoController {
       console.log("here new Contactinfo ",newContactinfo)
       const createdContactinfo = await ContactinfoService.addContactinfo(newContactinfo);
       util.setSuccess(201, 'Contactinfo Added!', createdContactinfo);
+     console.log("contact created successs",createdContactinfo)
       return util.send(res);
     } catch (error) {
       util.setError(400, error.message);
