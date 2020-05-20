@@ -91,6 +91,39 @@ router.get('/',[authJwt.verifyToken], UserController.getAllUsers);
  */
 router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
 /**
+ * @api {post} /users/sigin signin User
+ * @apiName login user
+ * @apiGroup User
+ *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
+ *
+ * @apiSuccess {String} firstname Firstname of the User.
+ * @apiSuccess {String} password  password of the User.
+
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *   "status": "success",
+    "message": "Found User",
+    "data": {
+        "auth": true,
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAwMDYwMjQsImV4cCI6MTU5MDA5MjQyNH0.b5QC4XKpJ-Qm27d5pF81NLeJ5JRYwtBcKkmKS7p-TEo"
+    }
+          
+ *     }
+ *
+ * @apiError UserNotFound The id of the User was not found.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "error": "UserNotFound"
+ *     }
+ */
+router.post('/signin', UserController.signin);
+/**
  * @api {get} /users/:id Request specific User information
  * @apiName GetUser
  * @apiGroup User
@@ -131,8 +164,6 @@ router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
          "message": "Cannot find User with the id Number"
  *     }
  */
-router.post('/signin', UserController.signin);
-
 router.get('/:id',[authJwt.verifyToken], UserController.getAUser);
 /**
 * @api {put} /users/:id Update specific User information
