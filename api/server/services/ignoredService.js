@@ -10,6 +10,14 @@ class ignoredService {
   }
 
   static async addignored(newignored) {
+   var isarray= Array.isArray(newignored.ignoredmemberid);
+   if(!isarray){
+     console.log("if exe")
+    var obj=JSON.parse(newignored.ignoredmemberid);
+    newignored.ignoredmemberid=obj;
+   }
+  
+    console.log("here ifnored",newignored);
     try {
       return await database.ignored.create(newignored);
     } catch (error) {

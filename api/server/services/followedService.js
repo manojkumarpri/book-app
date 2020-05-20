@@ -10,6 +10,14 @@ class followedService {
   }
 
   static async addfollowed(newfollowed) {
+    var isarray= Array.isArray(newfollowed.followedmemberid);
+    if(!isarray){
+      console.log("if exe")
+     var obj=JSON.parse(newfollowed.followedmemberid);
+     newfollowed.followedmemberid=obj;
+    }
+   
+     console.log("here ifnored",newfollowed);
     try {
       return await database.followed.create(newfollowed);
     } catch (error) {

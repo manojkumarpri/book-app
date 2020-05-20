@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import partnerexpectationController from '../controllers/partnerexpectationController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /partnerexpectation/ Request get all partnerexpectation information of the user
@@ -8,7 +8,9 @@ const router = Router();
  * @apiGroup partnerexpectation
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -81,13 +83,15 @@ const router = Router();
  *       "error": "partnerexpectationNotfound"
  *     }
  */
-router.get('/', partnerexpectationController.getAllpartnerexpectations);
+router.get('/',[authJwt.verifyToken], partnerexpectationController.getAllpartnerexpectations);
 /**
  * @api {post} /partnerexpectation/ add partnerexpectation information
  * @apiName Getpartnerexpectation of user
  *  * @apiGroup partnerexpectation
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} generalrequirement  generalrequirement of the User.
   * @apiSuccess {integer} age age of the User.
@@ -188,12 +192,14 @@ router.get('/', partnerexpectationController.getAllpartnerexpectations);
          "message": "Cannot post partnerexpectation "
  *     }
  */
-router.post('/', partnerexpectationController.addpartnerexpectation);
+router.post('/',[authJwt.verifyToken], partnerexpectationController.addpartnerexpectation);
 /**
  * @api {get} /partnerexpectation/:id  Request specific partnerexpectation information of user
  * @apiName Get Specific partnerexpectation
  *  * @apiGroup partnerexpectation
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *
  * @apiParam {Number} id partnerexpectation unique ID.
  *
@@ -267,13 +273,15 @@ router.post('/', partnerexpectationController.addpartnerexpectation);
        "message": "Cannot find partnerexpectation with the id 1"
  *     }
  */
-router.get('/:id', partnerexpectationController.getApartnerexpectation);
+router.get('/:id',[authJwt.verifyToken], partnerexpectationController.getApartnerexpectation);
 /**
 * @api {put} /partnerexpectation/:id Update specific partnerexpectation information
  * @apiName Update partnerexpectation information
  * @apiGroup partnerexpectation
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id partnerexpectation unique ID.
  *
  *
@@ -377,13 +385,15 @@ router.get('/:id', partnerexpectationController.getApartnerexpectation);
       "message": "Cannot find partnerexpectation with the id: 2"
  *     }
  */
-router.put('/:id', partnerexpectationController.updatedpartnerexpectation);
+router.put('/:id',[authJwt.verifyToken], partnerexpectationController.updatedpartnerexpectation);
 /**
 * @api {delete} /partnerexpectation/:id Delete specific partnerexpectation information of user 
  * @apiName Delete partnerexpectation information
  * @apiGroup partnerexpectation
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id partnerexpectation unique ID.
  *
  *
@@ -409,6 +419,6 @@ router.put('/:id', partnerexpectationController.updatedpartnerexpectation);
       "message": "Cannot find partnerexpectation with the id: 2"
  *     }
  */
-router.delete('/:id', partnerexpectationController.deletepartnerexpectation);
+router.delete('/:id',[authJwt.verifyToken], partnerexpectationController.deletepartnerexpectation);
 
 export default router;

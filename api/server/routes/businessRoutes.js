@@ -1,13 +1,15 @@
 import { Router } from 'express';
 import businessController from '../controllers/businessController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /business/ Request get all Business information
  * @apiName GetAllBusiness
  * @apiGroup Business
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
 
 
@@ -44,12 +46,14 @@ const router = Router();
  *       "error": "BusinessNotfound"
  *     }
  */
-router.get('/', businessController.getAllbusinesss);
+router.get('/',[authJwt.verifyToken], businessController.getAllbusinesss);
 /**
  * @api {post} /business/ add Business information
  * @apiName GetBusiness
  *  * @apiGroup Business
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} businessname  businessname of the User.
@@ -95,12 +99,14 @@ router.get('/', businessController.getAllbusinesss);
          "message": "Cannot post Business "
  *     }
  */
-router.post('/', businessController.addbusiness);
+router.post('/',[authJwt.verifyToken], businessController.addbusiness);
 /**
  * @api {get} /business/:id  Request specific Business information
  * @apiName Get Specific Business
  *  * @apiGroup Business
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *
  * @apiParam {Number} id Business unique ID.
  *
@@ -137,13 +143,15 @@ router.post('/', businessController.addbusiness);
        "message": "Cannot find Business with the id 2"
  *     }
  */
-router.get('/:id', businessController.getAbusiness);
+router.get('/:id',[authJwt.verifyToken], businessController.getAbusiness);
 /**
 * @api {put} /business/:id Update specific Business information
  * @apiName UpdateBusiness information
  * @apiGroup Business
  *
-   *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+  
  * @apiParam {Number} id Business unique ID.
  *
  *
@@ -191,13 +199,15 @@ router.get('/:id', businessController.getAbusiness);
       "message": "Cannot find Business with the id: 2"
  *     }
  */
-router.put('/:id', businessController.updatedbusiness);
+router.put('/:id',[authJwt.verifyToken], businessController.updatedbusiness);
 /**
 * @api {delete} /business/:id Delete specific Business information
  * @apiName DeleteBusiness information
  * @apiGroup Business
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Business unique ID.
  *
  *
@@ -223,6 +233,6 @@ router.put('/:id', businessController.updatedbusiness);
       "message": "Cannot find Business with the id: 2"
  *     }
  */
-router.delete('/:id', businessController.deletebusiness);
+router.delete('/:id',[authJwt.verifyToken], businessController.deletebusiness);
 
 export default router;

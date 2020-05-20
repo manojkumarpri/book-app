@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import introductionController from '../controllers/introductionController';
+const authJwt = require('./verifyJwtToken');
 
 const router = Router();
 /**
@@ -9,6 +10,8 @@ const router = Router();
  *
  
  
+* @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
 
 
  * @apiSuccessExample Success-Response:
@@ -35,12 +38,14 @@ const router = Router();
  *       "error": "introductionsNotfound"
  *     }
  */
-router.get('/', introductionController.getAllintroductions);
+router.get('/',[authJwt.verifyToken], introductionController.getAllintroductions);
 /**
  * @api {post} /introduction/ add introduction information
  * @apiName Getintroduction
  *  * @apiGroup Introduction
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} description  description of the User.
@@ -70,13 +75,15 @@ router.get('/', introductionController.getAllintroductions);
  *     }
  */
 
-router.post('/', introductionController.addintroduction);
+router.post('/',[authJwt.verifyToken], introductionController.addintroduction);
 /**
  * @api {get} /introduction/:id  Request specific introduction information
  * @apiName Get Specific introduction
  *  * @apiGroup Introduction
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id introduction unique ID.
  *
  *
@@ -103,12 +110,15 @@ router.post('/', introductionController.addintroduction);
        "message": "Cannot find introduction with the id 2"
  *     }
  */
-router.get('/:id', introductionController.getAintroduction);
+router.get('/:id',[authJwt.verifyToken],introductionController.getAintroduction);
 /**
  * @api {put} /introduction/:id Update introduction information
  * @apiName Updateintroduction
  *  * @apiGroup Introduction
    *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id introduction unique ID.
  *
  *
@@ -139,12 +149,14 @@ router.get('/:id', introductionController.getAintroduction);
          "message": "Cannot updated introduction "
  *     }
  */
-router.put('/:id', introductionController.updatedintroduction);
+router.put('/:id',[authJwt.verifyToken], introductionController.updatedintroduction);
 /**
  * @api {delete} /introduction/:id Delete introduction information
  * @apiName Deleteintroduction
  *  * @apiGroup Introduction
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id introduction unique ID.
  *
 
@@ -165,6 +177,6 @@ router.put('/:id', introductionController.updatedintroduction);
          "message": "Cannot Delete introduction "
  *     }
  */
-router.delete('/:id', introductionController.deleteintroduction);
+router.delete('/:id',[authJwt.verifyToken], introductionController.deleteintroduction);
 
 export default router;

@@ -64,8 +64,9 @@ return arr;
     try {
        await db.User.create(newUser).then((user)=>{
         console.log("hre add",user);
-        console.log("newUser.contactobj",newUser.contactobj)
-        contactService.addContactinfo(newUser.contactobj).then((data)=>{
+        console.log("newUser.contactobj",newUser.contactobj);
+        var obj = JSON.parse(newUser.contactobj);
+        contactService.addContactinfo(obj).then((data)=>{
           console.log("hre data",data);
           return data;
         }) 
@@ -92,7 +93,48 @@ return arr;
       throw error;
     }
   }
+  static async getAUseremail(email){
+    console.log("here email",email)
 
+    try {
+      const theUser =   contactService.getAContactinfoemail(email).then((data)=>{
+        console.log("hre data",data);
+        return data;
+      }) 
+  console.log("here email",theUser.dataValues);
+  if(theUser){
+    return true;
+
+  }
+  else{
+return false;
+  }
+     
+    } catch (error) {
+console.log("here ",error)
+      return true;
+    }  
+  }
+static async getAUsersignin(firstname){
+  console.log("here id",firstname)
+
+  try {
+    const theUser = await db.User.findOne({
+      where: { firstname: firstname },
+      include: [
+        {
+          model: db.Contactinfo
+        }
+      ]
+  
+
+    });
+console.log("here firstname",theUser.dataValues)
+    return theUser.dataValues;
+  } catch (error) {
+    throw error;
+  }
+}
   static async getAUser(id) {
     console.log("here id",id)
 

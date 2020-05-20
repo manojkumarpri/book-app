@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import followedController from '../controllers/followedController';
+const authJwt = require('./verifyJwtToken');
 
 const router = Router();
 /**
@@ -8,7 +9,9 @@ const router = Router();
  * @apiGroup followedusers
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -38,13 +41,15 @@ const router = Router();
  *       "error": "followedsNotfound"
  *     }
  */
-router.get('/', followedController.getAllfolloweds);
+router.get('/',[authJwt.verifyToken], followedController.getAllfolloweds);
 /**
  * @api {post} /followed/ add followedusers information
  * @apiName addfollowedusers
  *  * @apiGroup followedusers
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
  
  *  @apiSuccess {integer} memberid memberid of the User.
@@ -80,15 +85,17 @@ router.get('/', followedController.getAllfolloweds);
          "message": "Cannot post followed "
  *     }
  */
-router.post('/', followedController.addfollowed);
+router.post('/',[authJwt.verifyToken], followedController.addfollowed);
 /**
  * @api {get} /followed/:id  Request specific followedusers information
  * @apiName Get Specific user followedusers
  *  * @apiGroup followedusers
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *
  * @apiParam {Number} id followedusers unique ID.
- *
+ 
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -117,13 +124,15 @@ router.post('/', followedController.addfollowed);
        "message": "Cannot find followedusers with the id 1"
  *     }
  */
-router.get('/:id', followedController.getAfollowed);
+router.get('/:id',[authJwt.verifyToken], followedController.getAfollowed);
 /**
 * @api {put} /followed/:id Update specific followedusers information
  * @apiName Updatefollowedusers information
  * @apiGroup followedusers
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id followedusers unique ID.
  *
  *
@@ -161,13 +170,15 @@ router.get('/:id', followedController.getAfollowed);
       "message": "Cannot find followedusers with the id: 2"
  *     }
  */
-router.put('/:id', followedController.updatedfollowed);
+router.put('/:id',[authJwt.verifyToken],followedController.updatedfollowed);
 /**
 * @api {delete} /followed/:id Delete specific followedusers information
  * @apiName Deletefollowedusers information
  * @apiGroup followedusers
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id followedusers unique ID.
  *
  *
@@ -193,6 +204,6 @@ router.put('/:id', followedController.updatedfollowed);
       "message": "Cannot find followedusers with the id: 2"
  *     }
  */
-router.delete('/:id', followedController.deletefollowed);
+router.delete('/:id',[authJwt.verifyToken],followedController.deletefollowed);
 
 export default router;

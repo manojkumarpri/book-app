@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import ContactinfoController from '../controllers/ContactinfoController';
+const authJwt = require('./verifyJwtToken');
 
 const router = Router();
 /**
@@ -37,12 +38,14 @@ const router = Router();
  *       "error": "ContactinfoNotfound"
  *     }
  */
-router.get('/', ContactinfoController.getAllContactinfos);
+router.get('/',[authJwt.verifyToken], ContactinfoController.getAllContactinfos);
 /**
  * @api {post} /contact/ add contact information
  * @apiName Getcontact
  *  * @apiGroup Contact
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {integer} mobile mobile of the User.
  * @apiSuccess {String} email  email of the User.
@@ -69,12 +72,14 @@ router.get('/', ContactinfoController.getAllContactinfos);
  *     }
  */
 
-router.post('/', ContactinfoController.addContactinfo);
+router.post('/',[authJwt.verifyToken],ContactinfoController.addContactinfo);
 /**
  * @api {get} /contact/:id  Request specific contact information
  * @apiName Get Specific contact
  *  * @apiGroup Contact
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *
  * @apiParam {Number} id Contact unique ID.
  *
@@ -104,13 +109,15 @@ router.post('/', ContactinfoController.addContactinfo);
        "message": "Cannot find Contactinfo with the id 2"
  *     }
  */
-router.get('/:id', ContactinfoController.getAContactinfo);
+router.get('/:id',[authJwt.verifyToken],ContactinfoController.getAContactinfo);
 /**
 * @api {put} /contact/:id Update specific Contact information
  * @apiName UpdateContact information
  * @apiGroup Contact
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Contact unique ID.
  *
  *
@@ -146,13 +153,15 @@ router.get('/:id', ContactinfoController.getAContactinfo);
       "message": "Cannot find Contact with the id: 2"
  *     }
  */
-router.put('/:id', ContactinfoController.updatedContactinfo);
+router.put('/:id',[authJwt.verifyToken], ContactinfoController.updatedContactinfo);
 /**
 * @api {delete} /contact/:id Delete specific Contact information
  * @apiName DeleteContact information
  * @apiGroup Contact
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Contact unique ID.
  *
  *
@@ -178,6 +187,6 @@ router.put('/:id', ContactinfoController.updatedContactinfo);
       "message": "Cannot find Contact with the id: 2"
  *     }
  */
-router.delete('/:id', ContactinfoController.deleteContactinfo);
+router.delete('/:id',[authJwt.verifyToken], ContactinfoController.deleteContactinfo);
 
 export default router;

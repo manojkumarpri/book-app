@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import basicinfoController from '../controllers/basicinfoController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /basicinfo/ Request get all Basicinfo information
@@ -8,7 +8,9 @@ const router = Router();
  * @apiGroup Basicinfo
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -42,13 +44,15 @@ const router = Router();
  *       "error": "BasicinfoNotfound"
  *     }
  */
-router.get('/', basicinfoController.getAllbasicinfos);
+router.get('/',[authJwt.verifyToken], basicinfoController.getAllbasicinfos);
 /**
  * @api {post} /basicinfo/ add Basicinfo information
  * @apiName GetBasicinfo
  *  * @apiGroup Basicinfo
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} firstname  firstname of the User.
  * @apiSuccess {String} lastname  lastname of the User. 
@@ -93,13 +97,15 @@ router.get('/', basicinfoController.getAllbasicinfos);
  *     }
  */
 
-router.post('/', basicinfoController.addbasicinfo);
+router.post('/',[authJwt.verifyToken],basicinfoController.addbasicinfo);
 /**
  * @api {get} /basicinfo/:id  Request specific Basicinfo information
  * @apiName Get Specific Basicinfo
  *  * @apiGroup Basicinfo
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Basicinfo unique ID.
  *
  *
@@ -135,13 +141,15 @@ router.post('/', basicinfoController.addbasicinfo);
        "message": "Cannot find Basicinfo with the id 2"
  *     }
  */
-router.get('/:id', basicinfoController.getAbasicinfo);
+router.get('/:id',[authJwt.verifyToken],basicinfoController.getAbasicinfo);
 /**
 * @api {put} /basicinfo/:id Update specific Basicinfo information
  * @apiName UpdateBasicinfo information
  * @apiGroup Basicinfo
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Basicinfo unique ID.
  *
  *
@@ -193,13 +201,15 @@ router.get('/:id', basicinfoController.getAbasicinfo);
       "message": "Cannot find Basicinfo with the id: 2"
  *     }
  */
-router.put('/:id', basicinfoController.updatedbasicinfo);
+router.put('/:id',[authJwt.verifyToken],basicinfoController.updatedbasicinfo);
 /**
 * @api {delete} /basicinfo/:id Delete specific Basicinfo information
  * @apiName DeleteBasicinfo information
  * @apiGroup Basicinfo
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Basicinfo unique ID.
  *
  *
@@ -225,6 +235,6 @@ router.put('/:id', basicinfoController.updatedbasicinfo);
       "message": "Cannot find Basicinfo with the id: 2"
  *     }
  */
-router.delete('/:id', basicinfoController.deletebasicinfo);
+router.delete('/:id',[authJwt.verifyToken], basicinfoController.deletebasicinfo);
 
 export default router;

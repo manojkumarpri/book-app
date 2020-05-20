@@ -10,6 +10,14 @@ class partnerexpectationService {
   }
 
   static async addpartnerexpectation(newpartnerexpectation) {
+    var isarray= Array.isArray(newpartnerexpectation.expectedhoroscopematch);
+   if(!isarray){
+     console.log("if exe")
+    var obj=JSON.parse(newpartnerexpectation.expectedhoroscopematch);
+    newpartnerexpectation.expectedhoroscopematch=obj;
+   }
+  
+    console.log("here ifnored",newpartnerexpectation);
     try {
       return await database.partnerExpectation.create(newpartnerexpectation);
     } catch (error) {

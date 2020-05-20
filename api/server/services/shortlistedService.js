@@ -10,6 +10,14 @@ class shortlistedService {
   }
 
   static async addshortlisted(newshortlisted) {
+    var isarray= Array.isArray(newshortlisted.shortlistedmemberid);
+    if(!isarray){
+      console.log("if exe")
+     var obj=JSON.parse(newshortlisted.shortlistedmemberid);
+     newshortlisted.shortlistedmemberid=obj;
+    }
+   
+     console.log("here ifnored",newshortlisted);
     try {
       return await database.shortlisted.create(newshortlisted);
     } catch (error) {

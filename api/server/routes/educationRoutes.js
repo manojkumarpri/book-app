@@ -1,13 +1,15 @@
 import { Router } from 'express';
 import educationController from '../controllers/educationController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /education/ Request get all education information
  * @apiName GetAlleducation
  * @apiGroup education
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
 
 
@@ -42,13 +44,15 @@ const router = Router();
  *       "error": "educationNotfound"
  *     }
  */
-router.get('/', educationController.getAlleducations);
+router.get('/',[authJwt.verifyToken], educationController.getAlleducations);
 /**
  * @api {post} /education/ add education information
  * @apiName Geteducation
  *  * @apiGroup education
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
  * @apiSuccess {String} primaryschool  primaryschool of the User.
  *  @apiSuccess {integer} primaryyop primarschool year of passing of the User.
@@ -93,13 +97,15 @@ router.get('/', educationController.getAlleducations);
  *     }
  */
 
-router.post('/', educationController.addeducation);
+router.post('/',[authJwt.verifyToken],educationController.addeducation);
 /**
  * @api {get} /education/:id  Request specific education information
  * @apiName Get Specific education
  *  * @apiGroup education
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id education unique ID.
  *
  *
@@ -133,13 +139,15 @@ router.post('/', educationController.addeducation);
        "message": "Cannot find education with the id 1"
  *     }
  */
-router.get('/:id', educationController.getAeducation);
+router.get('/:id',[authJwt.verifyToken], educationController.getAeducation);
 /**
 * @api {put} /education/:id Update specific education information
  * @apiName Updateeducation information
  * @apiGroup education
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id education unique ID.
  *
  *
@@ -188,13 +196,15 @@ router.get('/:id', educationController.getAeducation);
       "message": "Cannot find education with the id: 2"
  *     }
  */
-router.put('/:id', educationController.updatededucation);
+router.put('/:id',[authJwt.verifyToken], educationController.updatededucation);
 /**
 * @api {delete} /education/:id Delete specific education information
  * @apiName Deleteeducation information
  * @apiGroup education
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id education unique ID.
  *
  *
@@ -220,6 +230,6 @@ router.put('/:id', educationController.updatededucation);
       "message": "Cannot find education with the id: 2"
  *     }
  */
-router.delete('/:id', educationController.deleteeducation);
+router.delete('/:id',[authJwt.verifyToken],educationController.deleteeducation);
 
 export default router;

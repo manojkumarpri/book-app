@@ -10,6 +10,14 @@ class myinterestService {
   }
 
   static async addmyinterest(newmyinterest) {
+    var isarray= Array.isArray(newmyinterest.intrestedmemberid);
+    if(!isarray){
+      console.log("if exe")
+     var obj=JSON.parse(newmyinterest.intrestedmemberid);
+     newmyinterest.intrestedmemberid=obj;
+    }
+   
+     console.log("here ifnored",newmyinterest);
     try {
       return await database.myinterest.create(newmyinterest);
     } catch (error) {

@@ -5,6 +5,26 @@ define({ "api": [
     "title": "Delete specific Astronimicdetails information",
     "name": "DeleteAstronimicdetails_information",
     "group": "Astronimicdetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -56,6 +76,26 @@ define({ "api": [
     "title": "Request get all Astronimicdetails information",
     "name": "GetAllAstronimicdetails",
     "group": "Astronimicdetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -94,6 +134,26 @@ define({ "api": [
     "title": "add Astronimicdetails information",
     "name": "GetAstronimicdetails",
     "group": "Astronimicdetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -206,6 +266,26 @@ define({ "api": [
     "title": "Request specific Astronimicdetails information",
     "name": "Get_Specific_Astronimicdetails",
     "group": "Astronimicdetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -257,6 +337,26 @@ define({ "api": [
     "title": "Update specific Astronimicdetails information",
     "name": "UpdateAstronimicdetails_information",
     "group": "Astronimicdetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -382,6 +482,26 @@ define({ "api": [
     "title": "Delete specific Basicinfo information",
     "name": "DeleteBasicinfo_information",
     "group": "Basicinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -433,6 +553,26 @@ define({ "api": [
     "title": "Request get all Basicinfo information",
     "name": "GetAllBasicinfo",
     "group": "Basicinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -471,6 +611,26 @@ define({ "api": [
     "title": "add Basicinfo information",
     "name": "GetBasicinfo",
     "group": "Basicinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -590,6 +750,26 @@ define({ "api": [
     "title": "Request specific Basicinfo information",
     "name": "Get_Specific_Basicinfo",
     "group": "Basicinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -641,6 +821,26 @@ define({ "api": [
     "title": "Update specific Basicinfo information",
     "name": "UpdateBasicinfo_information",
     "group": "Basicinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -773,6 +973,26 @@ define({ "api": [
     "title": "Delete specific Business information",
     "name": "DeleteBusiness_information",
     "group": "Business",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -824,6 +1044,26 @@ define({ "api": [
     "title": "Request get all Business information",
     "name": "GetAllBusiness",
     "group": "Business",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -862,6 +1102,26 @@ define({ "api": [
     "title": "add Business information",
     "name": "GetBusiness",
     "group": "Business",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -981,6 +1241,26 @@ define({ "api": [
     "title": "Request specific Business information",
     "name": "Get_Specific_Business",
     "group": "Business",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1032,6 +1312,26 @@ define({ "api": [
     "title": "Update specific Business information",
     "name": "UpdateBusiness_information",
     "group": "Business",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1164,6 +1464,26 @@ define({ "api": [
     "title": "Delete specific Contact information",
     "name": "DeleteContact_information",
     "group": "Contact",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1253,6 +1573,26 @@ define({ "api": [
     "title": "Request specific contact information",
     "name": "Get_Specific_contact",
     "group": "Contact",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1304,6 +1644,26 @@ define({ "api": [
     "title": "add contact information",
     "name": "Getcontact",
     "group": "Contact",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -1374,6 +1734,26 @@ define({ "api": [
     "title": "Update specific Contact information",
     "name": "UpdateContact_information",
     "group": "Contact",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1457,6 +1837,26 @@ define({ "api": [
     "title": "Delete introduction information",
     "name": "Deleteintroduction",
     "group": "Introduction",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1508,6 +1908,26 @@ define({ "api": [
     "title": "Request get all introduction of users",
     "name": "GetAllintroductions",
     "group": "Introduction",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1546,6 +1966,26 @@ define({ "api": [
     "title": "Request specific introduction information",
     "name": "Get_Specific_introduction",
     "group": "Introduction",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1597,6 +2037,26 @@ define({ "api": [
     "title": "add introduction information",
     "name": "Getintroduction",
     "group": "Introduction",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -1653,6 +2113,26 @@ define({ "api": [
     "title": "Update introduction information",
     "name": "Updateintroduction",
     "group": "Introduction",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1722,6 +2202,26 @@ define({ "api": [
     "title": "add User information",
     "name": "AddUser_information",
     "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -1778,15 +2278,15 @@ define({ "api": [
             "group": "Success 200",
             "type": "object",
             "optional": false,
-            "field": "Contactinfo",
-            "description": "<p>Contactinfo of the User.</p>"
+            "field": "contactobj",
+            "description": "<p>contactobj of the User.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n     \"firstname\": \"gokmathiakka\",\n        \"lastname\": \"ambika\",\n        \"gender\": \"female\",\n        \"dob\": \"2012-04-23T18:25:43.511Z\",\n        \"onbehalf\": \"self\",\n        \"password\": \"goms@11\",\n        \"premium\": true,\n        \"Contactinfo\": {\n            \"mobile\": 122772332,\n            \"email\": \"kodi@gmail.com\",\n            \"facebook\": null,\n            \"linkedin\": null,\n            \"UserMemberid\": 1,\n            \"createdAt\": \"2020-05-14T17:02:49.008Z\",\n            \"updatedAt\": \"2020-05-14T17:02:49.008Z\"\n        }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n     \"firstname\": \"gokmathiakka\",\n        \"lastname\": \"ambika\",\n        \"gender\": \"female\",\n        \"dob\": \"2012-04-23T18:25:43.511Z\",\n        \"onbehalf\": \"self\",\n        \"password\": \"goms@11\",\n        \"premium\": true,\n        \"contactobj\": {\n            \"mobile\": 122772332,\n            \"email\": \"kodi@gmail.com\",\n            \"facebook\": null,\n            \"linkedin\": null,\n            \"UserMemberid\": 1,\n            \"createdAt\": \"2020-05-14T17:02:49.008Z\",\n            \"updatedAt\": \"2020-05-14T17:02:49.008Z\"\n        }\n}",
           "type": "json"
         }
       ]
@@ -1820,6 +2320,26 @@ define({ "api": [
     "title": "Delete specific User information",
     "name": "DeleteUser_information",
     "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1858,67 +2378,27 @@ define({ "api": [
     "title": "Request get all User information",
     "name": "GetAllUser",
     "group": "User",
-    "success": {
+    "header": {
       "fields": {
-        "Success 200": [
+        "Header": [
           {
-            "group": "Success 200",
+            "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "firstname",
-            "description": "<p>Firstname of the User.</p>"
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
           },
           {
-            "group": "Success 200",
+            "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "lastname",
-            "description": "<p>Lastname of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "gender",
-            "description": "<p>gender of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "DATE",
-            "optional": false,
-            "field": "dob",
-            "description": "<p>dob of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "onbehalf",
-            "description": "<p>onbehalf of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "password",
-            "description": "<p>password of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "boolean",
-            "optional": false,
-            "field": "premium",
-            "description": "<p>premium of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "object",
-            "optional": false,
-            "field": "Contactinfo",
-            "description": "<p>Contactinfo of the User.</p>"
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
           }
         ]
-      },
+      }
+    },
+    "success": {
       "examples": [
         {
           "title": "Success-Response:",
@@ -1956,6 +2436,26 @@ define({ "api": [
     "title": "Request specific User information",
     "name": "GetUser",
     "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2007,6 +2507,26 @@ define({ "api": [
     "title": "Update specific User information",
     "name": "UpdateUser_information",
     "group": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -2105,6 +2625,26 @@ define({ "api": [
     "title": "Delete specific education information",
     "name": "Deleteeducation_information",
     "group": "education",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2156,6 +2696,26 @@ define({ "api": [
     "title": "Request get all education information",
     "name": "GetAlleducation",
     "group": "education",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -2194,6 +2754,26 @@ define({ "api": [
     "title": "Request specific education information",
     "name": "Get_Specific_education",
     "group": "education",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2245,6 +2825,26 @@ define({ "api": [
     "title": "add education information",
     "name": "Geteducation",
     "group": "education",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -2350,6 +2950,26 @@ define({ "api": [
     "title": "Update specific education information",
     "name": "Updateeducation_information",
     "group": "education",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2468,6 +3088,26 @@ define({ "api": [
     "title": "Delete specific followedusers information",
     "name": "Deletefollowedusers_information",
     "group": "followedusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2519,6 +3159,26 @@ define({ "api": [
     "title": "Request get all followed user information",
     "name": "GetAllfollowedusers",
     "group": "followedusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -2557,6 +3217,26 @@ define({ "api": [
     "title": "Request specific followedusers information",
     "name": "Get_Specific_user_followedusers",
     "group": "followedusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2608,6 +3288,26 @@ define({ "api": [
     "title": "Update specific followedusers information",
     "name": "Updatefollowedusers_information",
     "group": "followedusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2677,6 +3377,26 @@ define({ "api": [
     "title": "add followedusers information",
     "name": "addfollowedusers",
     "group": "followedusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -2746,6 +3466,26 @@ define({ "api": [
         ]
       }
     },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -2784,6 +3524,26 @@ define({ "api": [
     "title": "Request get all ignored user information",
     "name": "GetAll_ignored_users",
     "group": "ignoredusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -2822,6 +3582,26 @@ define({ "api": [
     "title": "Request specific ignored users information",
     "name": "Get_Specific_ignored_userlist_of_a_user",
     "group": "ignoredusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2873,6 +3653,26 @@ define({ "api": [
     "title": "Update specific ignored  users information",
     "name": "Update_ignored_users_information",
     "group": "ignoredusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2942,6 +3742,26 @@ define({ "api": [
     "title": "add ignored users information",
     "name": "addignored_users",
     "group": "ignoredusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -2998,6 +3818,26 @@ define({ "api": [
     "title": "Delete specific myinterest users information",
     "name": "Delete_myinterest_users_list_of_a_user",
     "group": "myinterest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3049,6 +3889,26 @@ define({ "api": [
     "title": "Request get all myinterest user information",
     "name": "GetAll_myinterest_users",
     "group": "myinterest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -3087,6 +3947,26 @@ define({ "api": [
     "title": "Request specific myinterest users information",
     "name": "Get_Specific_myinterest_userlist",
     "group": "myinterest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3138,6 +4018,26 @@ define({ "api": [
     "title": "Update specific myinterest  users information",
     "name": "Update_myinterest_users_information",
     "group": "myinterest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3207,6 +4107,26 @@ define({ "api": [
     "title": "add myinterest users information",
     "name": "add_myinterest_users",
     "group": "myinterest",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -3263,6 +4183,26 @@ define({ "api": [
     "title": "Delete specific partnerexpectation information of user",
     "name": "Delete_partnerexpectation_information",
     "group": "partnerexpectation",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3314,6 +4254,26 @@ define({ "api": [
     "title": "Request get all partnerexpectation information of the user",
     "name": "GetAll_partnerexpectation_info",
     "group": "partnerexpectation",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -3352,6 +4312,26 @@ define({ "api": [
     "title": "Request specific partnerexpectation information of user",
     "name": "Get_Specific_partnerexpectation",
     "group": "partnerexpectation",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3403,6 +4383,26 @@ define({ "api": [
     "title": "add partnerexpectation information",
     "name": "Getpartnerexpectation_of_user",
     "group": "partnerexpectation",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -3641,6 +4641,26 @@ define({ "api": [
     "title": "Update specific partnerexpectation information",
     "name": "Update_partnerexpectation_information",
     "group": "partnerexpectation",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3892,6 +4912,26 @@ define({ "api": [
     "title": "add personeldetails information",
     "name": "Add_personeldetails",
     "group": "personeldetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -4011,6 +5051,26 @@ define({ "api": [
     "title": "Delete specific personeldetails  information",
     "name": "Delete_personeldetails_information",
     "group": "personeldetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4062,6 +5122,26 @@ define({ "api": [
     "title": "Request get all personeldetails information",
     "name": "GetAll_personeldetails",
     "group": "personeldetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -4100,6 +5180,26 @@ define({ "api": [
     "title": "Request specific personeldetails information",
     "name": "Get_Specific_user_personeldetails",
     "group": "personeldetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4151,6 +5251,26 @@ define({ "api": [
     "title": "Update specific personeldetails of user information",
     "name": "Update_personeldetails_information_of_a_user",
     "group": "personeldetails",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4283,6 +5403,26 @@ define({ "api": [
     "title": "Delete specific shortlisted users information",
     "name": "Delete_shortlisted_users_list_of_a_user",
     "group": "shortlisted",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4334,6 +5474,26 @@ define({ "api": [
     "title": "Request get all shortlisted user information",
     "name": "GetAll_shortlisted_users",
     "group": "shortlisted",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -4372,6 +5532,26 @@ define({ "api": [
     "title": "Request specific shortlisted users information",
     "name": "Get_Specific_shortlisted_userlist",
     "group": "shortlisted",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4423,6 +5603,26 @@ define({ "api": [
     "title": "Update specific shortlisted  users information",
     "name": "Update_shortlisted_users_information",
     "group": "shortlisted",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4492,6 +5692,26 @@ define({ "api": [
     "title": "add shortlisted users information",
     "name": "add_shortlisted_users",
     "group": "shortlisted",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -4548,6 +5768,26 @@ define({ "api": [
     "title": "add socialbackround information",
     "name": "Add_socialbackround",
     "group": "socialbackround",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -4653,6 +5893,26 @@ define({ "api": [
     "title": "Delete specific socialbackround information of user",
     "name": "Delete_socialbackround_information",
     "group": "socialbackround",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4704,6 +5964,26 @@ define({ "api": [
     "title": "Request get all socialbackround information",
     "name": "GetAll_socialbackround",
     "group": "socialbackround",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -4742,6 +6022,26 @@ define({ "api": [
     "title": "Request specific socialbackround information",
     "name": "Get_Specific_socialbackround_of_user",
     "group": "socialbackround",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -4793,6 +6093,26 @@ define({ "api": [
     "title": "Update specific socialbackround information of user",
     "name": "Update_socialbackround_information",
     "group": "socialbackround",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [

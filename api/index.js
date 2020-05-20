@@ -24,7 +24,7 @@ config.config({ silent: process.env.NODE_ENV === 'production' });
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public/apidoc'))
 const port = process.env.PORT || 8000;
 //Routes 
@@ -45,9 +45,9 @@ app.use('/api/v1/shortlisted', shortlistedRoutes);
 app.use('/api/v1/followed', followedRoutes);
 app.use('/api/v1/ignored', ignoredRoutes);
 // when a random route is inputed
-// app.get('*', (req, res) => res.status(200).send({
-//   message: 'Welcome to this APIhlo.',
-// }));
+app.get('*', (req, res) => res.status(200).send({
+  message: 'Welcome to this kongumalaiAPI.',
+}));
 console.log("__dirname"+root);
 app.use('/apidoc', function(req, res) {
   res.sendFile(root+'/public/apidoc/index.html');

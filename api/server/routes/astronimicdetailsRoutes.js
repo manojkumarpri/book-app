@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import astronimicdetailsController from '../controllers/astronimicdetailsController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /astronimicdetails/ Request get all Astronimicdetails information
@@ -8,7 +8,9 @@ const router = Router();
  * @apiGroup Astronimicdetails
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -53,12 +55,14 @@ const router = Router();
  *       "error": "AstronimicdetailsNotfound"
  *     }
  */
-router.get('/', astronimicdetailsController.getAllastronimicdetailss);
+router.get('/',[authJwt.verifyToken], astronimicdetailsController.getAllastronimicdetailss);
 /**
  * @api {post} /astronimicdetails/ add Astronimicdetails information
  * @apiName GetAstronimicdetails
  *  * @apiGroup Astronimicdetails
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} raasi  raasi of the User.
@@ -113,12 +117,14 @@ router.get('/', astronimicdetailsController.getAllastronimicdetailss);
  *     }
  */
 
-router.post('/', astronimicdetailsController.addastronimicdetails);
+router.post('/',[authJwt.verifyToken],astronimicdetailsController.addastronimicdetails);
 /**
  * @api {get} /astronimicdetails/:id  Request specific Astronimicdetails information
  * @apiName Get Specific Astronimicdetails
  *  * @apiGroup Astronimicdetails
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *
  * @apiParam {Number} id Astronimicdetails unique ID.
  *
@@ -164,13 +170,16 @@ router.post('/', astronimicdetailsController.addastronimicdetails);
        "message": "Cannot find Astronimicdetails with the id 2"
  *     }
  */
-router.get('/:id', astronimicdetailsController.getAastronimicdetails);
+router.get('/:id',[authJwt.verifyToken],astronimicdetailsController.getAastronimicdetails);
 /**
 * @api {put} /astronimicdetails/:id Update specific Astronimicdetails information
  * @apiName UpdateAstronimicdetails information
  * @apiGroup Astronimicdetails
  *
    *
+   * * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Astronimicdetails unique ID.
  *
  *
@@ -223,13 +232,16 @@ router.get('/:id', astronimicdetailsController.getAastronimicdetails);
       "message": "Cannot find Astronimicdetails with the id: 2"
  *     }
  */
-router.put('/:id', astronimicdetailsController.updatedastronimicdetails);
+router.put('/:id',[authJwt.verifyToken],astronimicdetailsController.updatedastronimicdetails);
 /**
 * @api {delete} /astronimicdetails/:id Delete specific Astronimicdetails information
  * @apiName DeleteAstronimicdetails information
  * @apiGroup Astronimicdetails
  *
    *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Astronimicdetails unique ID.
  *
  *
@@ -255,6 +267,6 @@ router.put('/:id', astronimicdetailsController.updatedastronimicdetails);
       "message": "Cannot find Astronimicdetails with the id: 2"
  *     }
  */
-router.delete('/:id', astronimicdetailsController.deleteastronimicdetails);
+router.delete('/:id',[authJwt.verifyToken],astronimicdetailsController.deleteastronimicdetails);
 
 export default router;

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import shortlistedController from '../controllers/shortlistedController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /shortlisted/ Request get all shortlisted user information
@@ -8,7 +8,9 @@ const router = Router();
  * @apiGroup shortlisted
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -40,13 +42,15 @@ const router = Router();
  *       "error": "shortlistedNotfound"
  *     }
  */
-router.get('/', shortlistedController.getAllshortlisteds);
+router.get('/',[authJwt.verifyToken],  shortlistedController.getAllshortlisteds);
 /**
  * @api {post} /shortlisted/ add shortlisted users information
  * @apiName add shortlisted users
  *  * @apiGroup shortlisted
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
  
  *  @apiSuccess {integer} memberid memberid of the User.
@@ -82,13 +86,15 @@ router.get('/', shortlistedController.getAllshortlisteds);
  *       "error": "shortlistedridNotfound"
  *     }
  */
-router.post('/', shortlistedController.addshortlisted);
+router.post('/',[authJwt.verifyToken], shortlistedController.addshortlisted);
 /**
  * @api {get} /shortlisted/:id  Request specific shortlisted users information
  * @apiName Get Specific shortlisted userlist 
  *  * @apiGroup shortlisted
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id shortlisted unique ID.
  *
  *
@@ -120,13 +126,15 @@ router.post('/', shortlistedController.addshortlisted);
        "message": "Cannot find shortlisted with the id 1"
  *     }
  */
-router.get('/:id', shortlistedController.getAshortlisted);
+router.get('/:id',[authJwt.verifyToken],  shortlistedController.getAshortlisted);
 /**
 * @api {put} /shortlisted/:id Update specific shortlisted  users information
  * @apiName Update shortlisted users information
  * @apiGroup shortlisted
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id shortlisted unique ID.
  *
  *
@@ -160,13 +168,15 @@ router.get('/:id', shortlistedController.getAshortlisted);
       "message": "Cannot find shortlisted with the id: 2"
  *     }
  */
-router.put('/:id', shortlistedController.updatedshortlisted);
+router.put('/:id',[authJwt.verifyToken], shortlistedController.updatedshortlisted);
 /**
 * @api {delete} /shortlisted/:id Delete specific shortlisted users information
  * @apiName Delete shortlisted users list of a user
  * @apiGroup shortlisted
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id shortlisted unique ID.
  *
  *
@@ -192,6 +202,6 @@ router.put('/:id', shortlistedController.updatedshortlisted);
       "message": "Cannot find shortlisted with the id: 2"
  *     }
  */
-router.delete('/:id', shortlistedController.deleteshortlisted);
+router.delete('/:id',[authJwt.verifyToken], shortlistedController.deleteshortlisted);
 
 export default router;

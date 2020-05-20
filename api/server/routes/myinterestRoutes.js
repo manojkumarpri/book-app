@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import myinterestController from '../controllers/myinterestController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /myinterest/ Request get all myinterest user information
@@ -8,6 +8,8 @@ const router = Router();
  * @apiGroup myinterest
  *
  
+* @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
  
 
 
@@ -39,13 +41,15 @@ const router = Router();
  *       "error": "myinterestNotfound"
  *     }
  */
-router.get('/', myinterestController.getAllmyinterests);
+router.get('/',[authJwt.verifyToken], myinterestController.getAllmyinterests);
 /**
  * @api {post} /myinterest/ add myinterest users information
  * @apiName add myinterest users
  *  * @apiGroup myinterest
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
  
  *  @apiSuccess {integer} memberid memberid of the User.
@@ -81,13 +85,15 @@ router.get('/', myinterestController.getAllmyinterests);
  *       "error": "myinterestNotfound"
  *     }
  */
-router.post('/', myinterestController.addmyinterest);
+router.post('/',[authJwt.verifyToken],myinterestController.addmyinterest);
 /**
  * @api {get} /myinterest/:id  Request specific myinterest users information
  * @apiName Get Specific myinterest userlist 
  *  * @apiGroup myinterest
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id myinterest unique ID.
  *
  *
@@ -119,13 +125,15 @@ router.post('/', myinterestController.addmyinterest);
        "message": "Cannot find myinterest with the id 1"
  *     }
  */
-router.get('/:id', myinterestController.getAmyinterest);
+router.get('/:id',[authJwt.verifyToken], myinterestController.getAmyinterest);
 /**
 * @api {put} /myinterest/:id Update specific myinterest  users information
  * @apiName Update myinterest users information
  * @apiGroup myinterest
  *
-   *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id myinterest unique ID.
  *
  *
@@ -161,13 +169,15 @@ router.get('/:id', myinterestController.getAmyinterest);
       "message": "Cannot find myinterest with the id: 2"
  *     }
  */
-router.put('/:id', myinterestController.updatedmyinterest);
+router.put('/:id',[authJwt.verifyToken],myinterestController.updatedmyinterest);
 /**
 * @api {delete} /myinterest/:id Delete specific myinterest users information
  * @apiName Delete myinterest users list of a user
  * @apiGroup myinterest
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id myinterest unique ID.
  *
  *
@@ -193,6 +203,6 @@ router.put('/:id', myinterestController.updatedmyinterest);
       "message": "Cannot find myinterest with the id: 2"
  *     }
  */
-router.delete('/:id', myinterestController.deletemyinterest);
+router.delete('/:id',[authJwt.verifyToken], myinterestController.deletemyinterest);
 
 export default router;

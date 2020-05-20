@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import socialbackroundController from '../controllers/socialbackroundController';
-
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /socialbackround/ Request get all socialbackround information
@@ -8,7 +8,9 @@ const router = Router();
  * @apiGroup socialbackround
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -42,13 +44,15 @@ const router = Router();
  *       "error": "socialbackround Notfound"
  *     }
  */
-router.get('/', socialbackroundController.getAllsocialbackrounds);
+router.get('/',[authJwt.verifyToken], socialbackroundController.getAllsocialbackrounds);
 /**
  * @api {post} /socialbackround/ add socialbackround information
  * @apiName Add socialbackround
  *  * @apiGroup socialbackround
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *  @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} religion  religion of the User.
   * @apiSuccess {String} community  community of the User.
@@ -91,13 +95,15 @@ router.get('/', socialbackroundController.getAllsocialbackrounds);
  *     }
  */
 
-router.post('/', socialbackroundController.addsocialbackround);
+router.post('/',[authJwt.verifyToken],socialbackroundController.addsocialbackround);
 /**
  * @api {get} /socialbackround/:id  Request specific socialbackround information
  * @apiName Get Specific socialbackround of user
  *  * @apiGroup socialbackround
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id socialbackround unique ID.
  *
  *
@@ -131,13 +137,15 @@ router.post('/', socialbackroundController.addsocialbackround);
        "message": "Cannot find socialbackround with the id 1"
  *     }
  */
-router.get('/:id', socialbackroundController.getAsocialbackround);
+router.get('/:id',[authJwt.verifyToken],socialbackroundController.getAsocialbackround);
 /**
 * @api {put} /socialbackround/:id Update specific socialbackround information of user
  * @apiName Update socialbackround information
  * @apiGroup socialbackround
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id socialbackround unique ID.
  *
  *
@@ -180,13 +188,15 @@ router.get('/:id', socialbackroundController.getAsocialbackround);
       "message": "Cannot find socialbackround with the id: 2"
  *     }
  */
-router.put('/:id', socialbackroundController.updatedsocialbackround);
+router.put('/:id',[authJwt.verifyToken],socialbackroundController.updatedsocialbackround);
 /**
 * @api {delete} /socialbackround/:id Delete specific socialbackround information of user
  * @apiName Delete socialbackround information
  * @apiGroup socialbackround
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id socialbackround unique ID.
  *
  *
@@ -212,6 +222,6 @@ router.put('/:id', socialbackroundController.updatedsocialbackround);
       "message": "Cannot find socialbackround with the id: 2"
  *     }
  */
-router.delete('/:id', socialbackroundController.deletesocialbackround);
+router.delete('/:id',[authJwt.verifyToken], socialbackroundController.deletesocialbackround);
 
 export default router;

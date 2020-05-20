@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import personeldetailsController from '../controllers/personeldetailsController';
+const authJwt = require('./verifyJwtToken');
 
 const router = Router();
 /**
@@ -7,7 +8,9 @@ const router = Router();
  * @apiName GetAll personeldetails
  * @apiGroup personeldetails
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
 
 
@@ -44,13 +47,15 @@ const router = Router();
  *       "error": "personeldetails Notfound"
  *     }
  */
-router.get('/', personeldetailsController.getAllpersoneldetailss);
+router.get('/',[authJwt.verifyToken],personeldetailsController.getAllpersoneldetailss);
 /**
  * @api {post} /personeldetails/ add personeldetails information
  * @apiName Add personeldetails
  *  * @apiGroup personeldetails
  
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
   *  @apiSuccess {integer} memberid memberid of the User.
  * @apiSuccess {String} smoke  smoke of the User.
   * @apiSuccess {String} drink  drink of the User.
@@ -100,13 +105,15 @@ router.get('/', personeldetailsController.getAllpersoneldetailss);
  *     }
  */
 
-router.post('/', personeldetailsController.addpersoneldetails);
+router.post('/',[authJwt.verifyToken], personeldetailsController.addpersoneldetails);
 /**
  * @api {get} /personeldetails/:id  Request specific personeldetails information
  * @apiName Get Specific user personeldetails
  *  * @apiGroup personeldetails
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id personeldetails unique ID.
  *
  *
@@ -142,13 +149,15 @@ router.post('/', personeldetailsController.addpersoneldetails);
        "message": "Cannot find personeldetails with the id 1"
  *     }
  */
-router.get('/:id', personeldetailsController.getApersoneldetails);
+router.get('/:id',[authJwt.verifyToken], personeldetailsController.getApersoneldetails);
 /**
 * @api {put} /personeldetails/:id Update specific personeldetails of user information
  * @apiName Update personeldetails information of a user
  * @apiGroup personeldetails
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id personeldetails unique ID.
  *
  *
@@ -197,13 +206,15 @@ router.get('/:id', personeldetailsController.getApersoneldetails);
       "message": "Cannot find personeldetails with the id: 2"
  *     }
  */
-router.put('/:id', personeldetailsController.updatedpersoneldetails);
+router.put('/:id',[authJwt.verifyToken], personeldetailsController.updatedpersoneldetails);
 /**
 * @api {delete} /personeldetails/:id Delete specific personeldetails  information
  * @apiName Delete personeldetails information
  * @apiGroup personeldetails
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id personeldetails unique ID.
  *
  *
@@ -229,6 +240,6 @@ router.put('/:id', personeldetailsController.updatedpersoneldetails);
       "message": "Cannot find personeldetails with the id: 2"
  *     }
  */
-router.delete('/:id', personeldetailsController.deletepersoneldetails);
+router.delete('/:id',[authJwt.verifyToken], personeldetailsController.deletepersoneldetails);
 
 export default router;

@@ -1,13 +1,16 @@
 import { Router } from 'express';
 import UserController from '../controllers/UserController';
-
+const verfifysignup = require('./verifysignup');
+const authJwt = require('./verifyJwtToken');
 const router = Router();
 /**
  * @api {get} /users/ Request get all User information
  * @apiName GetAllUser
  * @apiGroup User
  *
- 
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  
  * @apiSuccessExample Success-Response:
@@ -39,13 +42,15 @@ const router = Router();
  *       "error": "UserNotFound"
  *     }
  */
-router.get('/', UserController.getAllUsers);
+router.get('/',[authJwt.verifyToken], UserController.getAllUsers);
 /**
  * @api {post} /users/ add User information
  * @apiName AddUser information
  * @apiGroup User
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {String} firstname Firstname of the User.
  * @apiSuccess {String} lastname  Lastname of the User.
@@ -65,7 +70,7 @@ router.get('/', UserController.getAllUsers);
             "onbehalf": "self",
             "password": "goms@11",
             "premium": true,
-            "Contactinfo": {
+            "contactobj": {
                 "mobile": 122772332,
                 "email": "kodi@gmail.com",
                 "facebook": null,
@@ -84,12 +89,14 @@ router.get('/', UserController.getAllUsers);
  *       "error": "UserNotFound"
  *     }
  */
-router.post('/', UserController.addUser);
+router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
 /**
  * @api {get} /users/:id Request specific User information
  * @apiName GetUser
  * @apiGroup User
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id Users unique ID.
  *
  
@@ -124,15 +131,17 @@ router.post('/', UserController.addUser);
          "message": "Cannot find User with the id Number"
  *     }
  */
+router.post('/signin', UserController.signin);
 
-
-router.get('/:id', UserController.getAUser);
+router.get('/:id',[authJwt.verifyToken], UserController.getAUser);
 /**
 * @api {put} /users/:id Update specific User information
  * @apiName UpdateUser information
  * @apiGroup User
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  * @apiSuccess {String} firstname Firstname of the User.
  * @apiSuccess {String} lastname  Lastname of the User.
@@ -174,13 +183,15 @@ router.get('/:id', UserController.getAUser);
       "message": "Cannot find User with the id: 2"
  *     }
  */
-router.put('/:id', UserController.updatedUser);
+router.put('/:id',[authJwt.verifyToken],UserController.updatedUser);
 /**
 * @api {delete} /users/:id Delete specific User information
  * @apiName DeleteUser information
  * @apiGroup User
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -199,6 +210,6 @@ router.put('/:id', UserController.updatedUser);
       "message": "Cannot find User with the id: 2"
  *     }
  */
-router.delete('/:id', UserController.deleteUser);
+router.delete('/:id',[authJwt.verifyToken],UserController.deleteUser);
 
 export default router;

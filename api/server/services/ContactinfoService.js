@@ -48,7 +48,22 @@ class ContactinfoService {
       throw error;
     }
   }
-
+  static async getAContactinfoemail(id) {
+    try {
+      const theContactinfo = await database.Contactinfo.findOne({
+        where: { email:id }
+      });
+if(theContactinfo){
+  return true;
+}
+else{
+  return false;
+}
+    
+    } catch (error) {
+      throw error;
+    }
+  }
   static async deleteContactinfo(id) {
     try {
       const ContactinfoToDelete = await database.Contactinfo.findOne({ where: { UserMemberid: Number(id) } });

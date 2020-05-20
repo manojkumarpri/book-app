@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import ignoredController from '../controllers/ignoredController';
+const authJwt = require('./verifyJwtToken');
 
 const router = Router();
 /**
@@ -8,7 +9,9 @@ const router = Router();
  * @apiGroup ignoredusers
  *
  
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
 
 
  * @apiSuccessExample Success-Response:
@@ -40,14 +43,16 @@ const router = Router();
  *       "error": "ignoredNotfound"
  *     }
  */
-router.get('/', ignoredController.getAllignoreds);
+router.get('/',[authJwt.verifyToken], ignoredController.getAllignoreds);
 /**
  * @api {post} /ignored/ add ignored users information
  * @apiName addignored users
  *  * @apiGroup ignoredusers
  
  *
- 
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  
  *  @apiSuccess {integer} memberid memberid of the User.
   * @apiSuccess {ARRAY} ignoredmemberid  ignoredmemberids of the Users.
@@ -82,13 +87,15 @@ router.get('/', ignoredController.getAllignoreds);
  *       "error": "ignoredNotfound"
  *     }
  */
-router.post('/', ignoredController.addignored);
+router.post('/',[authJwt.verifyToken], ignoredController.addignored);
 /**
  * @api {get} /ignored/:id  Request specific ignored users information
  * @apiName Get Specific ignored userlist of a user
  *  * @apiGroup ignoredusers
  
-  *
+  * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id ignoredusers unique ID.
  *
  *
@@ -120,13 +127,15 @@ router.post('/', ignoredController.addignored);
        "message": "Cannot find ignoredusers with the id 1"
  *     }
  */
-router.get('/:id', ignoredController.getAignored);
+router.get('/:id',[authJwt.verifyToken], ignoredController.getAignored);
 /**
 * @api {put} /ignored/:id Update specific ignored  users information
  * @apiName Update ignored users information
  * @apiGroup ignoredusers
  *
-   *
+   * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  * @apiParam {Number} id ignoredusers unique ID.
  *
  *
@@ -162,7 +171,7 @@ router.get('/:id', ignoredController.getAignored);
       "message": "Cannot find ignoredusers with the id: 2"
  *     }
  */
-router.put('/:id', ignoredController.updatedignored);
+router.put('/:id',[authJwt.verifyToken], ignoredController.updatedignored);
 /**
 * @api {delete} /ignored/:id Delete specific ignored users information
  * @apiName Delete ignored users list of a user
@@ -171,7 +180,9 @@ router.put('/:id', ignoredController.updatedignored);
    *
  * @apiParam {Number} id ignoredusers unique ID.
  *
- *
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
  *
  *
  
@@ -194,6 +205,6 @@ router.put('/:id', ignoredController.updatedignored);
       "message": "Cannot find ignoredusers with the id: 2"
  *     }
  */
-router.delete('/:id', ignoredController.deleteignored);
+router.delete('/:id',[authJwt.verifyToken], ignoredController.deleteignored);
 
 export default router;

@@ -6,12 +6,20 @@ class astronimicdetailsService {
       console.log("here astronimic service get")
       return await database.astronimicDetails.findAll();
     } catch (error) {
-      console.log("here astronimic service get err",error)
+      console.log("here astronimic service get err",error) 
       throw error;
     }
   }
 
   static async addastronimicdetails(newastronimicdetails) {
+    var isarray= Array.isArray(newastronimicdetails.suitablestars);
+    if(!isarray){
+      console.log("if exe")
+     var obj=JSON.parse(newastronimicdetails.suitablestars);
+     newastronimicdetails.suitablestars=obj;
+    }
+   
+     console.log("here ifnored",newastronimicdetails);
     try {
       return await database.astronimicDetails.create(newastronimicdetails);
     } catch (error) {
