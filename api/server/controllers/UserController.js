@@ -28,6 +28,7 @@ class UserController {
   }
 
   static async addUser(req, res) {
+    console.log("her contactobj",req.body.contactobj);
     const userobj=await UserController.getEmail(req, res);
     console.log("email result"+await userobj);
     if(await userobj){

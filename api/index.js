@@ -1,5 +1,8 @@
 import config from 'dotenv';
 import express from 'express';
+var cors = require('cors');
+
+const multer = require('multer')
 var path = require('path');
 import bodyParser from 'body-parser';
 import bookRoutes from './server/routes/BookRoutes';
@@ -18,14 +21,27 @@ import shortlistedRoutes from './server/routes/shortlistedRoutes';
 import followedRoutes from './server/routes/followedRoutes';
 import ignoredRoutes from './server/routes/ignoredRoutes';
 import root from '../root';
-
+import imageRoutes from './server/routes/imageRoutes';
 config.config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
 
+app.use(cors()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public/apidoc'))
+
+const Storage = multer.diskStorage({
+  destination(req, file, callback) {
+    console.log("here images");
+    callback(null, './images')
+  },
+  filename(req, file, callback) {
+    console.log("here images filename");
+    callback(null, `${file.fieldname}_${Date.now()}_${file.originalname}`)
+  },
+});
+const upload = multer({ storage: Storage })
 const port = process.env.PORT || 8000;
 //Routes 
 
@@ -44,6 +60,7 @@ app.use('/api/v1/myinterest', myinterestRoutes);
 app.use('/api/v1/shortlisted', shortlistedRoutes);
 app.use('/api/v1/followed', followedRoutes);
 app.use('/api/v1/ignored', ignoredRoutes);
+app.use('/api/v1/images',imageRoutes);
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to this kongumalaiAPI.',
@@ -52,6 +69,7 @@ console.log("__dirname"+root);
 app.use('/apidoc', function(req, res) {
   res.sendFile(root+'/public/apidoc/index.html');
 });
+
 app.listen(port, () => {
   console.log(`Server is running on PORT ${port}`);
 });
