@@ -12,7 +12,7 @@ function verifyToken(req, res, next) {
       auth: false, message: 'No token provided.' 
     });
   }
-  if(requestType=="application/x-www-form-urlencoded"){
+  if(req.is('application/x-www-form-urlencoded')){
  
   jwt.verify(token,process.env.SECRET_KEY, (err, decoded) => {
     if (err){
