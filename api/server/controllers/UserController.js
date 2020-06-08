@@ -29,10 +29,13 @@ class UserController {
 
   static async addUser(req, res) {
     console.log("her contactobj",req.body.contactobj);
-    const userobj=await UserController.getEmail(req, res);
-    console.log("email result"+await userobj);
+ 
+   
     if(req.body.contactobj!=undefined){
+      const userobj=await UserController.getEmail(req, res);
+      console.log("email result"+await userobj);
     if(await userobj){
+   
       if (req.body.title || req.body.price || req.body.description||req.body.contactobj==undefined) {
         util.setError(400, 'Please provide complete details');
         return util.send(res);
