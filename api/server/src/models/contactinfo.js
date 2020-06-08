@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Contactinfo = sequelize.define('Contactinfo', {
     mobile:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     email:{
@@ -25,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Contactinfo.associate = function(models) {
     // associations can be defined here
-   
   };
   return Contactinfo;
 };

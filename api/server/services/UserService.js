@@ -62,10 +62,13 @@ return arr;
 
   static async addUser(newUser) {
     try {
-       await db.User.create(newUser).then((user)=>{
+    
+  
+      console.log('newuser',newUser);
+       await database.User.create(newUser).then((user)=>{
         console.log("hre add",user);
         console.log("newUser.contactobj",newUser.contactobj);
-        var obj = JSON.parse(newUser.contactobj);
+        var obj =newUser.contactobj;
         contactService.addContactinfo(obj).then((data)=>{
           console.log("hre data",data);
           return data;

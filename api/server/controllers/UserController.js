@@ -28,7 +28,7 @@ class UserController {
   }
 
   static async addUser(req, res) {
-    console.log("her contactobj",req.body.contactobj);
+    console.log("her contactobj",req.body.password);
  
    
     if(req.body.contactobj!=undefined){
@@ -113,8 +113,8 @@ class UserController {
   }
 static async getEmail(req,res){
 
-  var obj = JSON.parse(req.body.contactobj);
-  console.log("here user email"+obj.email)
+  var obj = req.body.contactobj;
+  console.log("here user email",obj)
   const theUser =await   contactService.getAContactinfoemail(obj.email).then((data)=>{
     console.log("hre data",data);
     return data;

@@ -2217,7 +2217,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "Content-Type",
-            "description": "<p>application/x-www-form-urlencoded.</p>"
+            "description": "<p>application/json.</p>"
           }
         ]
       }

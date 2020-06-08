@@ -51,7 +51,7 @@ router.get('/',[authJwt2.verifyToken2], UserController.getAllUsers);
  * @apiGroup User
  *
  * @apiHeader {String} x-access-token Users unique api-token.
-  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+  *  @apiHeader {String} Content-Type application/json.
 
  *
  * @apiSuccess {String} firstname Firstname of the User.
@@ -91,7 +91,7 @@ router.get('/',[authJwt2.verifyToken2], UserController.getAllUsers);
  *       "error": "UserNotFound"
  *     }
  */
-router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
+router.post('/',  UserController.addUser);
 /**
  * @api {post} /users/sigin signin User
  * @apiName login user
