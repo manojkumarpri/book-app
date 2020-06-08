@@ -1,9 +1,11 @@
 import config from 'dotenv';
 import express from 'express';
 var cors = require('cors');
+var fs = require('fs');
 
 const multer = require('multer')
 var path = require('path');
+
 import bodyParser from 'body-parser';
 import bookRoutes from './server/routes/BookRoutes';
 import userRoutes from './server/routes/UserRoutes';
@@ -20,28 +22,31 @@ import myinterestRoutes from './server/routes/myinterestRoutes';
 import shortlistedRoutes from './server/routes/shortlistedRoutes';
 import followedRoutes from './server/routes/followedRoutes';
 import ignoredRoutes from './server/routes/ignoredRoutes';
+import templestoriesRoutes from './server/routes/templestoriesRoutes';
 import root from '../root';
-import imageRoutes from './server/routes/imageRoutes';
 config.config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
 
 app.use(cors()); 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public/apidoc'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public/apidoc'));
+app.use(express.static('images'));
+
 
 const Storage = multer.diskStorage({
   destination(req, file, callback) {
-    console.log("here images");
+    console.log("here dest")
     callback(null, './images')
   },
   filename(req, file, callback) {
-    console.log("here images filename");
+    console.log("here filename")
     callback(null, `${file.fieldname}_${Date.now()}_${file.originalname}`)
   },
-});
-const upload = multer({ storage: Storage })
+})
+
+const upload = multer({ storage: Storage });
 const port = process.env.PORT || 8000;
 //Routes 
 
@@ -60,11 +65,36 @@ app.use('/api/v1/myinterest', myinterestRoutes);
 app.use('/api/v1/shortlisted', shortlistedRoutes);
 app.use('/api/v1/followed', followedRoutes);
 app.use('/api/v1/ignored', ignoredRoutes);
-app.use('/api/v1/images',imageRoutes);
+app.use('/api/v1/templestories',templestoriesRoutes);
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to this kongumalaiAPI.',
 }));
+app.post('/api/upload', upload.array('photo', 3), (req, res) => {
+  //  console.log("here content type",req.get('Content-Type'));
+    console.log('file', req.file)
+    console.log('body', req.body)
+    res.status(200).json({
+      message: 'success!',
+    })
+  })
+  var imagesEndpoints = [];
+  fs.readdir(root+'/images/', function(err, filenames) {
+    if (err) {
+      onError(err);
+      return;
+    }
+    filenames.forEach(function(filename) {
+ console.log('file name'+filename);
+ imagesEndpoints.push(filename);
+    });
+  });
+ 
+ imagesEndpoints.forEach(function(name) {
+   app.get('/'+name, function(req, res) {
+      res.sendFile(root+'/images/'+ name );
+   });
+ }); 
 console.log("__dirname"+root);
 app.use('/apidoc', function(req, res) {
   res.sendFile(root+'/public/apidoc/index.html');
