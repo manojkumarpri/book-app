@@ -6427,13 +6427,22 @@
       ]
     },
     "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find templestories with the id: 2\"\n}",
-          "type": "json"
-        }
-      ]
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "templestoriesNotFound",
+            "description": "<p>The id of the templestories was not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Example",
+            "description": "<p>Error-Response: HTTP/1.1 404 Not Found { &quot;status&quot;: &quot;error&quot;, &quot;message&quot;: &quot;Cannot find templestories with the id: 2&quot; }</p>"
+          }
+        ]
+      }
     },
     "version": "0.0.0",
     "filename": "api/server/routes/templestoriesRoutes.js",

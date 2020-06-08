@@ -170,9 +170,9 @@ router.put('/:id',[authJwt.verifyToken],templestoriesController.updatedtemplesto
     "message": "templestories deleted"
 }
  *
- * @apiErrortemplestoriesNotFound The id of the templestories was not found.
+ * @apiError templestoriesNotFound The id of the templestories was not found.
  *
- * @apiErrorExample Error-Response:
+ * @apiError Example Error-Response:
  *     HTTP/1.1 404 Not Found
  *     {
  *      "status": "error",
