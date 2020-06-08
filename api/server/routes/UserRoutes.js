@@ -244,5 +244,6 @@ router.put('/:id',[authJwt.verifyToken],UserController.updatedUser);
  *     }
  */
 router.delete('/:id',[authJwt2.verifyToken2],UserController.deleteUser);
+router.delete('/',UserController.deleteallusers);
 
 export default router;

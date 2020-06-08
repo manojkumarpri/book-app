@@ -171,6 +171,20 @@ console.log("here id",theUser)
       throw error;
     }
   }
+  static async deleteallUser() {
+    try {
+      await contactService.deleteallContactinfo();
+      if (true) {
+        const deletedUser = await database.User.destroy({
+          truncate: true
+        });
+        return deletedUser;
+      }
+      return null;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default UserService;

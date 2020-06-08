@@ -79,6 +79,18 @@ else{
       throw error;
     }
   }
+  static async deleteallContactinfo(){
+    try {
+    
+      const deletedContactinfo = await database.Contactinfo.destroy({
+        truncate: true
+      });
+      return deletedContactinfo;
+    
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default ContactinfoService;

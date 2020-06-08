@@ -32,7 +32,7 @@ class UserController {
     const userobj=await UserController.getEmail(req, res);
     console.log("email result"+await userobj);
     if(await userobj){
-      if (req.body.title || req.body.price || req.body.description) {
+      if (req.body.title || req.body.price || req.body.description||req.body.contactobj==undefined) {
         util.setError(400, 'Please provide complete details');
         return util.send(res);
       }
@@ -183,6 +183,22 @@ return true;
       return util.send(res);
     }
   }
+  static async deleteallusers(req,res){
+    try {
+      const UserToDelete = await UserService.deleteallUser();
+
+      if (UserToDelete) {
+        util.setSuccess(200, 'User deleted');
+      } else {
+        util.setError(404, `User  cannot be found`);
+      }
+      return util.send(res);
+    } catch (error) {
+      util.setError(400, error);
+      return util.send(res);
+    }
+  }
+  
 }
 
 export default UserController;
