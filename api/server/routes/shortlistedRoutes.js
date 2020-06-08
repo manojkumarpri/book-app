@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import shortlistedController from '../controllers/shortlistedController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 const router = Router();
 /**
  * @api {get} /shortlisted/ Request get all shortlisted user information
@@ -42,7 +44,7 @@ const router = Router();
  *       "error": "shortlistedNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken],  shortlistedController.getAllshortlisteds);
+router.get('/',[authJwt2.verifyToken2],  shortlistedController.getAllshortlisteds);
 /**
  * @api {post} /shortlisted/ add shortlisted users information
  * @apiName add shortlisted users

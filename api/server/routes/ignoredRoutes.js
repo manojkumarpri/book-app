@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import ignoredController from '../controllers/ignoredController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
 /**
@@ -43,7 +44,7 @@ const router = Router();
  *       "error": "ignoredNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], ignoredController.getAllignoreds);
+router.get('/',[authJwt2.verifyToken2], ignoredController.getAllignoreds);
 /**
  * @api {post} /ignored/ add ignored users information
  * @apiName addignored users

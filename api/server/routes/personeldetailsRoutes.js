@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import personeldetailsController from '../controllers/personeldetailsController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
 /**
@@ -47,7 +48,7 @@ const router = Router();
  *       "error": "personeldetails Notfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken],personeldetailsController.getAllpersoneldetailss);
+router.get('/',[authJwt2.verifyToken2],personeldetailsController.getAllpersoneldetailss);
 /**
  * @api {post} /personeldetails/ add personeldetails information
  * @apiName Add personeldetails

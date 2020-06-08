@@ -3,6 +3,8 @@ const multer = require('multer')
 const bodyParser = require('body-parser')
 import ignoredController from '../controllers/ignoredController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 import { Router } from 'express';
 
 const router = Router();

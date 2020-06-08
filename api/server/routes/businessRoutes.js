@@ -2,6 +2,8 @@ import { Router } from 'express';
 import businessController from '../controllers/businessController';
 const authJwt = require('./verifyJwtToken');
 const router = Router();
+const authJwt2=require('./verifyJwtToken2');
+
 /**
  * @api {get} /business/ Request get all Business information
  * @apiName GetAllBusiness
@@ -46,7 +48,7 @@ const router = Router();
  *       "error": "BusinessNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], businessController.getAllbusinesss);
+router.get('/',[authJwt2.verifyToken2], businessController.getAllbusinesss);
 /**
  * @api {post} /business/ add Business information
  * @apiName GetBusiness

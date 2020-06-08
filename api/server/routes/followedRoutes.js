@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import followedController from '../controllers/followedController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
 /**
@@ -41,7 +42,7 @@ const router = Router();
  *       "error": "followedsNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], followedController.getAllfolloweds);
+router.get('/',[authJwt2.verifyToken2], followedController.getAllfolloweds);
 /**
  * @api {post} /followed/ add followedusers information
  * @apiName addfollowedusers

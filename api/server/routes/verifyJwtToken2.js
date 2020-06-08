@@ -3,16 +3,16 @@ const jwt = require('jsonwebtoken');
 
 
  
-function verifyToken(req, res, next) {
+function verifyToken2(req, res, next) {
   let token = req.headers['x-access-token'];
   var requestType =req.headers['content-type']; 
-  console.log("requestType",requestType)
+ 
   if (!token){
     return res.status(403).send({ 
       auth: false, message: 'No token provided.' 
     });
   }
-  if(requestType=='application/x-www-form-urlencoded'){
+ 
  
   jwt.verify(token,process.env.SECRET_KEY, (err, decoded) => {
     if (err){
@@ -24,21 +24,16 @@ function verifyToken(req, res, next) {
     req.userId = decoded.id;
     next();
   });
-}
-else{
-  return res.status(403).send({ 
-    auth: false, 
-    message: 'content type is not accepted '
-  });
-}
+
+
 }
  
 
  
 
  
-const authJwt = {};
-authJwt.verifyToken = verifyToken;
+const authJwt2 = {};
+authJwt2.verifyToken2 = verifyToken2;
 
  
-module.exports = authJwt;
+module.exports = authJwt2;

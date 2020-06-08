@@ -2,6 +2,8 @@ import { Router } from 'express';
 import basicinfoController from '../controllers/basicinfoController';
 const authJwt = require('./verifyJwtToken');
 const router = Router();
+const authJwt2=require('./verifyJwtToken2');
+
 /**
  * @api {get} /basicinfo/ Request get all Basicinfo information
  * @apiName GetAllBasicinfo
@@ -44,7 +46,7 @@ const router = Router();
  *       "error": "BasicinfoNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], basicinfoController.getAllbasicinfos);
+router.get('/',[authJwt2.verifyToken2], basicinfoController.getAllbasicinfos);
 /**
  * @api {post} /basicinfo/ add Basicinfo information
  * @apiName GetBasicinfo

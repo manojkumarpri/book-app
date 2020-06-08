@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import socialbackroundController from '../controllers/socialbackroundController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 const router = Router();
 /**
  * @api {get} /socialbackround/ Request get all socialbackround information
@@ -44,7 +46,7 @@ const router = Router();
  *       "error": "socialbackround Notfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], socialbackroundController.getAllsocialbackrounds);
+router.get('/',[authJwt2.verifyToken2], socialbackroundController.getAllsocialbackrounds);
 /**
  * @api {post} /socialbackround/ add socialbackround information
  * @apiName Add socialbackround

@@ -2,6 +2,8 @@ import { Router } from 'express';
 import educationController from '../controllers/educationController';
 const authJwt = require('./verifyJwtToken');
 const router = Router();
+const authJwt2=require('./verifyJwtToken2');
+
 /**
  * @api {get} /education/ Request get all education information
  * @apiName GetAlleducation
@@ -44,7 +46,7 @@ const router = Router();
  *       "error": "educationNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], educationController.getAlleducations);
+router.get('/',[authJwt2.verifyToken2], educationController.getAlleducations);
 /**
  * @api {post} /education/ add education information
  * @apiName Geteducation

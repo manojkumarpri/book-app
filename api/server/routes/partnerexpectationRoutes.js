@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import partnerexpectationController from '../controllers/partnerexpectationController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 const router = Router();
 /**
  * @api {get} /partnerexpectation/ Request get all partnerexpectation information of the user
@@ -83,7 +85,7 @@ const router = Router();
  *       "error": "partnerexpectationNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], partnerexpectationController.getAllpartnerexpectations);
+router.get('/',[authJwt2.verifyToken2], partnerexpectationController.getAllpartnerexpectations);
 /**
  * @api {post} /partnerexpectation/ add partnerexpectation information
  * @apiName Getpartnerexpectation of user

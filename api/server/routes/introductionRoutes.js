@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import introductionController from '../controllers/introductionController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
 /**
@@ -38,7 +39,7 @@ const router = Router();
  *       "error": "introductionsNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], introductionController.getAllintroductions);
+router.get('/',[authJwt2.verifyToken2], introductionController.getAllintroductions);
 /**
  * @api {post} /introduction/ add introduction information
  * @apiName Getintroduction

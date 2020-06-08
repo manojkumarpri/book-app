@@ -2,6 +2,8 @@ import { Router } from 'express';
 import astronimicdetailsController from '../controllers/astronimicdetailsController';
 const authJwt = require('./verifyJwtToken');
 const router = Router();
+const authJwt2=require('./verifyJwtToken2');
+
 /**
  * @api {get} /astronimicdetails/ Request get all Astronimicdetails information
  * @apiName GetAllAstronimicdetails
@@ -55,7 +57,7 @@ const router = Router();
  *       "error": "AstronimicdetailsNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], astronimicdetailsController.getAllastronimicdetailss);
+router.get('/',[authJwt2.verifyToken2], astronimicdetailsController.getAllastronimicdetailss);
 /**
  * @api {post} /astronimicdetails/ add Astronimicdetails information
  * @apiName GetAstronimicdetails

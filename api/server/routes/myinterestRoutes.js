@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import myinterestController from '../controllers/myinterestController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 const router = Router();
 /**
  * @api {get} /myinterest/ Request get all myinterest user information
@@ -41,7 +43,7 @@ const router = Router();
  *       "error": "myinterestNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], myinterestController.getAllmyinterests);
+router.get('/',[authJwt2.verifyToken2], myinterestController.getAllmyinterests);
 /**
  * @api {post} /myinterest/ add myinterest users information
  * @apiName add myinterest users

@@ -2,6 +2,8 @@ import { Router } from 'express';
 import UserController from '../controllers/UserController';
 const verfifysignup = require('./verifysignup');
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
+
 const router = Router();
 /**
  * @api {get} /users/ Request get all User information
@@ -42,7 +44,7 @@ const router = Router();
  *       "error": "UserNotFound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], UserController.getAllUsers);
+router.get('/',[authJwt2.verifyToken2], UserController.getAllUsers);
 /**
  * @api {post} /users/ add User information
  * @apiName AddUser information

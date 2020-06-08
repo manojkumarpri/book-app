@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import ContactinfoController from '../controllers/ContactinfoController';
 const authJwt = require('./verifyJwtToken');
+const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
 /**
@@ -38,7 +39,7 @@ const router = Router();
  *       "error": "ContactinfoNotfound"
  *     }
  */
-router.get('/',[authJwt.verifyToken], ContactinfoController.getAllContactinfos);
+router.get('/',[authJwt2.verifyToken2], ContactinfoController.getAllContactinfos);
 /**
  * @api {post} /contact/ add contact information
  * @apiName Getcontact
