@@ -127,7 +127,7 @@ router.post('/',[authJwt.verifyToken],myinterestController.addmyinterest);
        "message": "Cannot find myinterest with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], myinterestController.getAmyinterest);
+router.get('/:id',[authJwt2.verifyToken2],myinterestController.getAmyinterest);
 /**
 * @api {put} /myinterest/:id Update specific myinterest  users information
  * @apiName Update myinterest users information
@@ -205,6 +205,6 @@ router.put('/:id',[authJwt.verifyToken],myinterestController.updatedmyinterest);
       "message": "Cannot find myinterest with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], myinterestController.deletemyinterest);
+router.delete('/:id',[authJwt2.verifyToken2],myinterestController.deletemyinterest);
 
 export default router;

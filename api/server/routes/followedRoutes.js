@@ -125,7 +125,7 @@ router.post('/',[authJwt.verifyToken], followedController.addfollowed);
        "message": "Cannot find followedusers with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], followedController.getAfollowed);
+router.get('/:id',[authJwt2.verifyToken2], followedController.getAfollowed);
 /**
 * @api {put} /followed/:id Update specific followedusers information
  * @apiName Updatefollowedusers information

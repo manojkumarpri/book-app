@@ -141,7 +141,7 @@ router.post('/',[authJwt.verifyToken],educationController.addeducation);
        "message": "Cannot find education with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], educationController.getAeducation);
+router.get('/:id',[authJwt2.verifyToken2], educationController.getAeducation);
 /**
 * @api {put} /education/:id Update specific education information
  * @apiName Updateeducation information
@@ -232,6 +232,6 @@ router.put('/:id',[authJwt.verifyToken], educationController.updatededucation);
       "message": "Cannot find education with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken],educationController.deleteeducation);
+router.delete('/:id',[authJwt2.verifyToken2], educationController.deleteeducation);
 
 export default router;

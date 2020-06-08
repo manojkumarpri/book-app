@@ -110,7 +110,7 @@ router.post('/',[authJwt.verifyToken],ContactinfoController.addContactinfo);
        "message": "Cannot find Contactinfo with the id 2"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],ContactinfoController.getAContactinfo);
+router.get('/:id',[authJwt2.verifyToken2], ContactinfoController.getAContactinfo);
 /**
 * @api {put} /contact/:id Update specific Contact information
  * @apiName UpdateContact information
@@ -188,6 +188,6 @@ router.put('/:id',[authJwt.verifyToken], ContactinfoController.updatedContactinf
       "message": "Cannot find Contact with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], ContactinfoController.deleteContactinfo);
+router.delete('/:id',[authJwt2.verifyToken2],  ContactinfoController.deleteContactinfo);
 
 export default router;

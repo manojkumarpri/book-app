@@ -145,7 +145,7 @@ router.post('/',[authJwt.verifyToken], businessController.addbusiness);
        "message": "Cannot find Business with the id 2"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], businessController.getAbusiness);
+router.get('/:id',[authJwt2.verifyToken2],  businessController.getAbusiness);
 /**
 * @api {put} /business/:id Update specific Business information
  * @apiName UpdateBusiness information
@@ -235,6 +235,6 @@ router.put('/:id',[authJwt.verifyToken], businessController.updatedbusiness);
       "message": "Cannot find Business with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], businessController.deletebusiness);
+router.delete('/:id',[authJwt2.verifyToken2],  businessController.deletebusiness);
 
 export default router;

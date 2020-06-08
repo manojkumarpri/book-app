@@ -166,7 +166,7 @@ router.post('/signin', UserController.signin);
          "message": "Cannot find User with the id Number"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], UserController.getAUser);
+router.get('/:id',[authJwt2.verifyToken2],UserController.getAUser);
 /**
 * @api {put} /users/:id Update specific User information
  * @apiName UpdateUser information
@@ -243,6 +243,6 @@ router.put('/:id',[authJwt.verifyToken],UserController.updatedUser);
       "message": "Cannot find User with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken],UserController.deleteUser);
+router.delete('/:id',[authJwt2.verifyToken2],UserController.deleteUser);
 
 export default router;

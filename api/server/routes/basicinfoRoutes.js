@@ -143,7 +143,7 @@ router.post('/',[authJwt.verifyToken],basicinfoController.addbasicinfo);
        "message": "Cannot find Basicinfo with the id 2"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],basicinfoController.getAbasicinfo);
+router.get('/:id',[authJwt2.verifyToken2],  basicinfoController.getAbasicinfo);
 /**
 * @api {put} /basicinfo/:id Update specific Basicinfo information
  * @apiName UpdateBasicinfo information
@@ -237,6 +237,6 @@ router.put('/:id',[authJwt.verifyToken],basicinfoController.updatedbasicinfo);
       "message": "Cannot find Basicinfo with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], basicinfoController.deletebasicinfo);
+router.delete('/:id',[authJwt2.verifyToken2],  basicinfoController.deletebasicinfo);
 
 export default router;

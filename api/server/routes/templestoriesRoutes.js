@@ -116,7 +116,7 @@ router.post('/',[authJwt.verifyToken], templestoriesController.addtemplestories)
          "message": "Cannot find templestories with the id Number"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], templestoriesController.getAtemplestories);
+router.get('/:id',[authJwt2.verifyToken2],templestoriesController.getAtemplestories);
 /**
 * @api {put} /templestories/:id Update specific templestories information
  * @apiName Updatetemplestories information
@@ -179,6 +179,6 @@ router.put('/:id',[authJwt.verifyToken],templestoriesController.updatedtemplesto
       "message": "Cannot find templestories with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], templestoriesController.deletetemplestories);
+router.delete('/:id',[authJwt2.verifyToken2],templestoriesController.deletetemplestories);
 
 export default router;

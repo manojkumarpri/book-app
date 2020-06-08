@@ -111,7 +111,7 @@ router.post('/',[authJwt.verifyToken], introductionController.addintroduction);
        "message": "Cannot find introduction with the id 2"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],introductionController.getAintroduction);
+router.get('/:id',[authJwt2.verifyToken2],introductionController.getAintroduction);
 /**
  * @api {put} /introduction/:id Update introduction information
  * @apiName Updateintroduction
@@ -178,6 +178,6 @@ router.put('/:id',[authJwt.verifyToken], introductionController.updatedintroduct
          "message": "Cannot Delete introduction "
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], introductionController.deleteintroduction);
+router.delete('/:id',[authJwt2.verifyToken2],introductionController.deleteintroduction);
 
 export default router;

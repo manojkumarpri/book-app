@@ -128,7 +128,7 @@ router.post('/',[authJwt.verifyToken], ignoredController.addignored);
        "message": "Cannot find ignoredusers with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], ignoredController.getAignored);
+router.get('/:id',[authJwt2.verifyToken2],ignoredController.getAignored);
 /**
 * @api {put} /ignored/:id Update specific ignored  users information
  * @apiName Update ignored users information
@@ -206,6 +206,6 @@ router.put('/:id',[authJwt.verifyToken], ignoredController.updatedignored);
       "message": "Cannot find ignoredusers with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], ignoredController.deleteignored);
+router.delete('/:id',[authJwt2.verifyToken2],ignoredController.deleteignored);
 
 export default router;

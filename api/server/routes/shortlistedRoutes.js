@@ -128,7 +128,7 @@ router.post('/',[authJwt.verifyToken], shortlistedController.addshortlisted);
        "message": "Cannot find shortlisted with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],  shortlistedController.getAshortlisted);
+router.get('/:id',[authJwt2.verifyToken2], shortlistedController.getAshortlisted);
 /**
 * @api {put} /shortlisted/:id Update specific shortlisted  users information
  * @apiName Update shortlisted users information
@@ -204,6 +204,6 @@ router.put('/:id',[authJwt.verifyToken], shortlistedController.updatedshortliste
       "message": "Cannot find shortlisted with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], shortlistedController.deleteshortlisted);
+router.delete('/:id',[authJwt2.verifyToken2],shortlistedController.deleteshortlisted);
 
 export default router;

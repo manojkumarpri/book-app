@@ -275,7 +275,7 @@ router.post('/',[authJwt.verifyToken], partnerexpectationController.addpartnerex
        "message": "Cannot find partnerexpectation with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], partnerexpectationController.getApartnerexpectation);
+router.get('/:id',[authJwt2.verifyToken2], partnerexpectationController.getApartnerexpectation);
 /**
 * @api {put} /partnerexpectation/:id Update specific partnerexpectation information
  * @apiName Update partnerexpectation information
@@ -421,6 +421,6 @@ router.put('/:id',[authJwt.verifyToken], partnerexpectationController.updatedpar
       "message": "Cannot find partnerexpectation with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], partnerexpectationController.deletepartnerexpectation);
+router.delete('/:id',[authJwt2.verifyToken2],partnerexpectationController.deletepartnerexpectation);
 
 export default router;

@@ -172,7 +172,7 @@ router.post('/',[authJwt.verifyToken],astronimicdetailsController.addastronimicd
        "message": "Cannot find Astronimicdetails with the id 2"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],astronimicdetailsController.getAastronimicdetails);
+router.get('/:id',[authJwt2.verifyToken2], astronimicdetailsController.getAastronimicdetails);
 /**
 * @api {put} /astronimicdetails/:id Update specific Astronimicdetails information
  * @apiName UpdateAstronimicdetails information
@@ -269,6 +269,6 @@ router.put('/:id',[authJwt.verifyToken],astronimicdetailsController.updatedastro
       "message": "Cannot find Astronimicdetails with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken],astronimicdetailsController.deleteastronimicdetails);
+router.delete('/:id',[authJwt2.verifyToken2], astronimicdetailsController.deleteastronimicdetails);
 
 export default router;

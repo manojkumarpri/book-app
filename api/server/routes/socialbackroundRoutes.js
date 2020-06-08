@@ -139,7 +139,7 @@ router.post('/',[authJwt.verifyToken],socialbackroundController.addsocialbackrou
        "message": "Cannot find socialbackround with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken],socialbackroundController.getAsocialbackround);
+router.get('/:id',[authJwt2.verifyToken2],socialbackroundController.getAsocialbackround);
 /**
 * @api {put} /socialbackround/:id Update specific socialbackround information of user
  * @apiName Update socialbackround information
@@ -224,6 +224,6 @@ router.put('/:id',[authJwt.verifyToken],socialbackroundController.updatedsocialb
       "message": "Cannot find socialbackround with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], socialbackroundController.deletesocialbackround);
+router.delete('/:id',[authJwt2.verifyToken2],socialbackroundController.deletesocialbackround);
 
 export default router;

@@ -150,7 +150,7 @@ router.post('/',[authJwt.verifyToken], personeldetailsController.addpersoneldeta
        "message": "Cannot find personeldetails with the id 1"
  *     }
  */
-router.get('/:id',[authJwt.verifyToken], personeldetailsController.getApersoneldetails);
+router.get('/:id',[authJwt2.verifyToken2], personeldetailsController.getApersoneldetails);
 /**
 * @api {put} /personeldetails/:id Update specific personeldetails of user information
  * @apiName Update personeldetails information of a user
@@ -241,6 +241,6 @@ router.put('/:id',[authJwt.verifyToken], personeldetailsController.updatedperson
       "message": "Cannot find personeldetails with the id: 2"
  *     }
  */
-router.delete('/:id',[authJwt.verifyToken], personeldetailsController.deletepersoneldetails);
+router.delete('/:id',[authJwt2.verifyToken2], personeldetailsController.deletepersoneldetails);
 
 export default router;
