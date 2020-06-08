@@ -2652,8 +2652,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "firstname",
-            "description": "<p>Firstname of the User.</p>"
+            "field": "aadharno",
+            "description": "<p>aadharnumber of the User.</p>"
           },
           {
             "group": "Success 200",
@@ -2679,7 +2679,7 @@ define({ "api": [
             "group": "Error 4xx",
             "optional": false,
             "field": "UserNotFound",
-            "description": "<p>The id of the User was not found.</p>"
+            "description": "<p>The aadharno of the User was not found.</p>"
           }
         ]
       },
@@ -6300,5 +6300,362 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "api/server/routes/socialbackroundRoutes.js",
     "groupTitle": "socialbackround"
+  },
+  {
+    "type": "post",
+    "url": "/templestories/",
+    "title": "add templestories information",
+    "name": "Addtemplestories_information",
+    "group": "templestories",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdby",
+            "description": "<p>createdby of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "imgurl",
+            "description": "<p>imgurl of the templestories.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n    \"status\": \"success\",\n    \"message\": \"templestories Added!\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Demo Happy Story Title 2\",\n        \"createdby\": \"Slade Bennett\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quasi, temporibus, optio necessitatibus harum quis eaque, asperiores illo velit veniam, quod quas deleniti corrupti officia cumque fugiat ipsum odio a.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt labore nobis corporis reiciendis quisquam reprehenderit, rem porro consectetur aut architecto temporibus. Praesentium dicta aut, alias est? Voluptatum, iusto, minima!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolorem debitis nesciunt dolor beatae delectus cumque sequi accusamus voluptatum, nihil fugiat, consequatur ratione iusto! Laboriosam minus sit quia illo sapiente.\",\n        \"imgurl\": \"https://www.mythirumanam.com/matrimonials/images/tamil_matrimony.jpg\",\n        \"updatedAt\": \"2020-06-08T07:36:00.474Z\",\n        \"createdAt\": \"2020-06-08T07:36:00.474Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "templestoriesNotFound",
+            "description": "<p>The id of the templestories was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"templestoriesNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/templestoriesRoutes.js",
+    "groupTitle": "templestories"
+  },
+  {
+    "type": "delete",
+    "url": "/templestories/:id",
+    "title": "Delete specific templestories information",
+    "name": "Deletetemplestories_information",
+    "group": "templestories",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"templestories deleted\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find templestories with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/templestoriesRoutes.js",
+    "groupTitle": "templestories"
+  },
+  {
+    "type": "get",
+    "url": "/templestories/",
+    "title": "Request get all templestories information",
+    "name": "GetAlltemplestories",
+    "group": "templestories",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n   {\n    \"status\": \"success\",\n    \"message\": \"templestoriess retrieved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Demo Happy Story Title 1\",\n            \"createdby\": \"Slade Bennett\",\n            \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quasi, temporibus, optio necessitatibus harum quis eaque, asperiores illo velit veniam, quod quas deleniti corrupti officia cumque fugiat ipsum odio a.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt labore nobis corporis reiciendis quisquam reprehenderit, rem porro consectetur aut architecto temporibus. Praesentium dicta aut, alias est? Voluptatum, iusto, minima!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolorem debitis nesciunt dolor beatae delectus cumque sequi accusamus voluptatum, nihil fugiat, consequatur ratione iusto! Laboriosam minus sit quia illo sapiente.\",\n            \"imgurl\": \"https://www.mythirumanam.com/matrimonials/images/tamil_matrimony.jpg\",\n            \"createdAt\": \"2020-06-08T07:30:34.435Z\",\n            \"updatedAt\": \"2020-06-08T07:30:34.435Z\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "templestoriesNotFound",
+            "description": "<p>The id of the templestories was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"templestoriesNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/templestoriesRoutes.js",
+    "groupTitle": "templestories"
+  },
+  {
+    "type": "get",
+    "url": "/templestories/:id",
+    "title": "Request specific templestories information",
+    "name": "Gettemplestories",
+    "group": "templestories",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>templestories unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n  {\n    \"status\": \"success\",\n    \"message\": \"Found templestories\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Demo Happy Story Title 1\",\n        \"createdby\": \"Slade Bennett\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quasi, temporibus, optio necessitatibus harum quis eaque, asperiores illo velit veniam, quod quas deleniti corrupti officia cumque fugiat ipsum odio a.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt labore nobis corporis reiciendis quisquam reprehenderit, rem porro consectetur aut architecto temporibus. Praesentium dicta aut, alias est? Voluptatum, iusto, minima!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolorem debitis nesciunt dolor beatae delectus cumque sequi accusamus voluptatum, nihil fugiat, consequatur ratione iusto! Laboriosam minus sit quia illo sapiente.\",\n        \"imgurl\": \"https://www.mythirumanam.com/matrimonials/images/tamil_matrimony.jpg\",\n        \"createdAt\": \"2020-06-08T07:30:34.435Z\",\n        \"updatedAt\": \"2020-06-08T07:30:34.435Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "templestoriesNotFound",
+            "description": "<p>The id of the templestories was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot find templestories with the id Number\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/templestoriesRoutes.js",
+    "groupTitle": "templestories"
+  },
+  {
+    "type": "put",
+    "url": "/templestories/:id",
+    "title": "Update specific templestories information",
+    "name": "Updatetemplestories_information",
+    "group": "templestories",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "createdby",
+            "description": "<p>createdby of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description of the templestories.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "imgurl",
+            "description": "<p>imgurl of the templestories.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n  {\n    \"status\": \"success\",\n    \"message\": \"templestories updated\",\n    \"data\": {\n        \"title\": \"Demo Happy Story Title 2\",\n        \"createdby\": \"Slad walker\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quasi, temporibus, optio necessitatibus harum quis eaque, asperiores illo velit veniam, quod quas deleniti corrupti officia cumque fugiat ipsum odio a.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt labore nobis corporis reiciendis quisquam reprehenderit, rem porro consectetur aut architecto temporibus. Praesentium dicta aut, alias est? Voluptatum, iusto, minima!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolorem debitis nesciunt dolor beatae delectus cumque sequi accusamus voluptatum, nihil fugiat, consequatur ratione iusto! Laboriosam minus sit quia illo sapiente.\",\n        \"imgurl\": \"https://www.mythirumanam.com/matrimonials/images/tamil_matrimony.jpg\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "templestoriesNotFound",
+            "description": "<p>The id of the templestories was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find templestories with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/templestoriesRoutes.js",
+    "groupTitle": "templestories"
   }
 ] });

@@ -101,7 +101,7 @@ router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
   *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
 
  *
- * @apiSuccess {String} firstname Firstname of the User.
+ * @apiSuccess {String} aadharno aadharnumber of the User.
  * @apiSuccess {String} password  password of the User.
 
  * @apiSuccessExample Success-Response:
@@ -116,7 +116,7 @@ router.post('/',[verfifysignup.verifyemail],  UserController.addUser);
           
  *     }
  *
- * @apiError UserNotFound The id of the User was not found.
+ * @apiError UserNotFound The aadharno of the User was not found.
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 404 Not Found
