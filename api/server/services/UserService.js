@@ -173,13 +173,14 @@ console.log("here id",theUser)
   }
   static async deleteallUser() {
     try {
-      await contactService.deleteallContactinfo();
-      if (true) {
-        const deletedUser = await database.User.destroy({
-          truncate: true
-        });
-        return deletedUser;
-      }
+     await contactService.deleteallContactinfo();
+      // if (true) {
+      //   const deletedUser = await database.User.destroy({
+      //     where: {},
+      //     truncate: true
+      //   });
+      //   return deletedUser;
+      // }
       return null;
     } catch (error) {
       throw error;
