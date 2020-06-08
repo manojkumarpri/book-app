@@ -129,19 +129,19 @@ return true;
 }
 }
   static async signin(req,res){
-    const { firstname } = req.body.firstname;
-     console.log("req.body.firstname",req.body.firstname)
-    if ((firstname)) {
+    const { password } = req.body.password;
+     console.log("req.body.firstname",req.body.email)
+    if ((password)) {
       util.setError(400, 'Please input a valid string value');
       return util.send(res);
     }
 
     try {
-      console.log("here firstname in c"+req.body.firstname);
-      const theUser = await UserService.getAUsersignin(req.body.firstname);
+      console.log("here password in c"+req.body.password);
+      const theUser = await UserService.getAUsersignin(req.body.password);
 
       if (!theUser) {
-        util.setError(404, `Cannot find User with the firstname ${req.body.firstname}`);
+        util.setError(404, `Cannot find User with the email ${req.body.email}`);
       } else {
         console.log("here userobj",theUser)
         var passwordIsValid;
@@ -162,7 +162,7 @@ return true;
         });
         
        
-        util.setSuccess(200, 'Found User', { auth: true, accessToken: token });
+        util.setSuccess(200, 'Found User', { auth: true, accessToken: token ,data:theUser });
       }
       return util.send(res);
     } catch (error) {
