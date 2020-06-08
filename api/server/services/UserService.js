@@ -115,12 +115,12 @@ console.log("here ",error)
       return true;
     }  
   }
-static async getAUsersignin(password){
-  console.log("here id",password)
+static async getAUsersignin(aadharno){
+  console.log("here id",aadharno)
 
   try {
     const theUser = await db.User.findOne({
-      where: { password:password },
+      where: { aadharno:aadharno },
       include: [
         {
           model: db.Contactinfo
