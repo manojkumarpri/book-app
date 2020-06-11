@@ -23,6 +23,10 @@ import shortlistedRoutes from './server/routes/shortlistedRoutes';
 import followedRoutes from './server/routes/followedRoutes';
 import ignoredRoutes from './server/routes/ignoredRoutes';
 import templestoriesRoutes from './server/routes/templestoriesRoutes';
+import communityRoutes from './server/routes/communityRoutes';
+import familyinfoRoutes from './server/routes/familyinfoRoutes';
+import knowndetailRoutes from './server/routes/knowndetailRoutes';
+import physicalappearanceRoutes from './server/routes/physicalappearanceRoutes';
 import root from '../root';
 config.config({ silent: process.env.NODE_ENV === 'production' });
 
@@ -66,6 +70,11 @@ app.use('/api/v1/shortlisted', shortlistedRoutes);
 app.use('/api/v1/followed', followedRoutes);
 app.use('/api/v1/ignored', ignoredRoutes);
 app.use('/api/v1/templestories',templestoriesRoutes);
+app.use('/api/v1/community',communityRoutes);
+app.use('/api/v1/familyinfo',familyinfoRoutes);
+app.use('/api/v1/knowndetail',knowndetailRoutes);
+app.use('/api/v1/physicalappearance',physicalappearanceRoutes);
+
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to this kongumalaiAPI.',

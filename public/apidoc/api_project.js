@@ -1,13 +1,13 @@
 define({
-  "name": "",
-  "version": "0.0.0",
-  "description": "KongumalaiAPI -Documentation",
+  "name": "Kongumalai",
+  "version": "1.0.0",
+  "description": "Kongumalai-Api Documentation",
   "sampleUrl": false,
-  "defaultVersion": "0.0.0",
+  "defaultVersion": "1.0.0",
   "apidoc": "0.3.0",
   "generator": {
-    "name": "KongumalaiAPI",
-    "time": "2020-06-08T14:14:39.047Z",
+    "name": "Kongumalai-ApiDocument",
+    "time": "2020-06-11T19:12:15.978Z",
     "url": "http://shinelogics.com/",
     "version": "0.22.1"
   }

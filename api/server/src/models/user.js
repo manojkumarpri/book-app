@@ -38,11 +38,13 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.BOOLEAN,
       allowNull: false
     }, 
-  
+    imgurl:{
+      type:DataTypes.STRING,
+      allowNull: false
+    }
   }, {});
   User.associate = function(models) {
     // associations can be defined here
-   
   };
   return User;
 };

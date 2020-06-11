@@ -2697,6 +2697,469 @@
   },
   {
     "type": "delete",
+    "url": "/community/:id",
+    "title": "Delete specific community information",
+    "name": "Deletecommunity_information",
+    "group": "community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>community unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n       {\n      \"status\": \"success\",\n    \"message\": \"community deleted\"\n    }\n}\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "communityNotFound",
+            "description": "<p>The id of the community was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find community with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "community"
+  },
+  {
+    "type": "get",
+    "url": "/community/",
+    "title": "Request get all community information",
+    "name": "GetAllcommunity",
+    "group": "community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"communitys retrieved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"religion\": \"Hindu\",\n            \"community\": \"goundar\",\n            \"caste\": \"Kongu Vellala Goundar\",\n            \"subcaste\": \" Aanthuvan - அந்துவன்\",\n            \"kuladeivam\": \"keernaar\",\n            \"place\": \"chennai\",\n            \"familystatus\": \"Low Class\\t\\n\",\n            \"familyvalue\": \"Moderate\",\n            \"memberid\": 1,\n            \"createdAt\": \"2020-06-11T17:48:45.846Z\",\n            \"updatedAt\": \"2020-06-11T17:48:45.846Z\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "communityNotfound",
+            "description": "<p>community was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"communityNotfound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "community"
+  },
+  {
+    "type": "get",
+    "url": "/community/:id",
+    "title": "Request specific community information",
+    "name": "Get_Specific_community",
+    "group": "community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>community unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"Found community\",\n    \"data\": {\n        \"id\": 1,\n        \"religion\": \"Hindu\",\n        \"community\": \"goundar\",\n        \"caste\": \"Kongu Vellala Goundar\",\n        \"subcaste\": \" Aanthuvan - அந்துவன்\",\n        \"kuladeivam\": \"keernaar\",\n        \"place\": \"chennai\",\n        \"familystatus\": \"Low Class\\t\\n\",\n        \"familyvalue\": \"Moderate\",\n        \"memberid\": 1,\n        \"createdAt\": \"2020-06-11T17:48:45.846Z\",\n        \"updatedAt\": \"2020-06-11T17:48:45.846Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "communityNotFound",
+            "description": "<p>community with id was not  found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n   \"message\": \"Cannot find community with the id 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "community"
+  },
+  {
+    "type": "post",
+    "url": "/community/",
+    "title": "add community information",
+    "name": "Getcommunity",
+    "group": "community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "religion",
+            "description": "<p>religion of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "community",
+            "description": "<p>community of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "caste",
+            "description": "<p>caste  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "subcaste",
+            "description": "<p>subcaste  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "kuladeivam",
+            "description": "<p>kuladeivam  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "place",
+            "description": "<p>place  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "familystatus",
+            "description": "<p>familystatus  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "familyvalue",
+            "description": "<p>familyvalue  of the community.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": \"success\",\n\"message\": \"community Added!\",\n\"data\": {\n    \"id\": 1,\n    \"religion\": \"Hindu\",\n    \"community\": \"goundar\",\n    \"caste\": \"Kongu Vellala Goundar\",\n    \"subcaste\": \" Aanthuvan - அந்துவன்\",\n    \"kuladeivam\": \"keernaar\",\n    \"place\": \"chennai\",\n    \"familystatus\": \"Low Class\\t\\n\",\n    \"familyvalue\": \"Moderate\",\n    \"memberid\": 1,\n    \"updatedAt\": \"2020-06-11T17:48:45.846Z\",\n    \"createdAt\": \"2020-06-11T17:48:45.846Z\"\n}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "communityNotFound",
+            "description": "<p>community was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot post community \"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "community"
+  },
+  {
+    "type": "put",
+    "url": "/community/:id",
+    "title": "Update specific community information",
+    "name": "Updatecommunity_information",
+    "group": "community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>community unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "religion",
+            "description": "<p>religion of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "community",
+            "description": "<p>community of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "caste",
+            "description": "<p>caste  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "subcaste",
+            "description": "<p>subcaste  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "kuladeivam",
+            "description": "<p>kuladeivam  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "place",
+            "description": "<p>place  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "familystatus",
+            "description": "<p>familystatus  of the community.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "familyvalue",
+            "description": "<p>familyvalue  of the community.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"community updated\",\n    \"data\": {\n        \"religion\": \"Hindu\",\n        \"community\": \"goundar\",\n        \"caste\": \"Kongu Vellala Goundar\",\n        \"subcaste\": \" Aanthuvan - அந்துவன்\",\n        \"kuladeivam\": \"keernaar\",\n        \"place\": \"chennai\",\n        \"familystatus\": \"Low class\",\n        \"familyvalue\": \"Moderate\",\n        \"memberid\": \"1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "communityNotFound",
+            "description": "<p>The id of the community was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find community with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "community"
+  },
+  {
+    "type": "delete",
     "url": "/education/:id",
     "title": "Delete specific education information",
     "name": "Deleteeducation_information",
@@ -3157,6 +3620,427 @@
     "version": "0.0.0",
     "filename": "api/server/routes/educationRoutes.js",
     "groupTitle": "education"
+  },
+  {
+    "type": "delete",
+    "url": "/familyinfo/:id",
+    "title": "Delete specific familyinfo information",
+    "name": "Deletefamilyinfo_information",
+    "group": "familyinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>familyinfo unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n       {\n      \"status\": \"success\",\n    \"message\": \"familyinfo deleted\"\n    }\n}\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "familyinfoNotFound",
+            "description": "<p>The id of the familyinfo was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find familyinfo with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/familyinfoRoutes.js",
+    "groupTitle": "familyinfo"
+  },
+  {
+    "type": "get",
+    "url": "/familyinfo/",
+    "title": "Request get all familyinfo information",
+    "name": "GetAllfamilyinfo",
+    "group": "familyinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"familyinfos retrieved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"fathersdetail\": \"KS CHINNASAMY He Died 2 yrs ago , he was former and business ma n\",\n            \"mothersdetail\": \"Mother LAKSMI Dies one year ago , she was house wife .\\n\",\n            \"sistersdetail\": \"Vennila -working\",\n            \"brothersdetail\": \"nil\",\n            \"otherrelationdetails\": \"Muthusamy - advocate\\n\",\n            \"memberid\": 1,\n            \"createdAt\": \"2020-06-11T18:35:33.993Z\",\n            \"updatedAt\": \"2020-06-11T18:35:33.993Z\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "familyinfoNotfound",
+            "description": "<p>familyinfo was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"familyinfoNotfound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/familyinfoRoutes.js",
+    "groupTitle": "familyinfo"
+  },
+  {
+    "type": "get",
+    "url": "/familyinfo/:id",
+    "title": "Request specific familyinfo information",
+    "name": "Get_Specific_familyinfo",
+    "group": "familyinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>familyinfo unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"Found familyinfo\",\n    \"data\": {\n        \"id\": 1,\n        \"fathersdetail\": \"KS CHINNASAMY He Died 2 yrs ago , he was former and business ma n\",\n        \"mothersdetail\": \"Mother LAKSMI Dies one year ago , she was house wife .\\n\",\n        \"sistersdetail\": \"Vennila -working\",\n        \"brothersdetail\": \"nil\",\n        \"otherrelationdetails\": \"Muthusamy - advocate\\n\",\n        \"memberid\": 1,\n        \"createdAt\": \"2020-06-11T18:35:33.993Z\",\n        \"updatedAt\": \"2020-06-11T18:35:33.993Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "familyinfoNotFound",
+            "description": "<p>familyinfo with id was not  found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n   \"message\": \"Cannot find familyinfo with the id 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/familyinfoRoutes.js",
+    "groupTitle": "familyinfo"
+  },
+  {
+    "type": "post",
+    "url": "/familyinfo/",
+    "title": "add familyinfo information",
+    "name": "Getfamilyinfo",
+    "group": "familyinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fathersdetail",
+            "description": "<p>fathersdetail of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "mothersdetail",
+            "description": "<p>mothersdetail of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "sistersdetail",
+            "description": "<p>sistersdetail  of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "brothersdetail",
+            "description": "<p>brothersdetail  of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "otherrelationdetails",
+            "description": "<p>otherrelationdetails  of the familyinfo.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"familyinfo Added!\",\n    \"data\": {\n        \"id\": 1,\n        \"fathersdetail\": \"KS CHINNASAMY He Died 2 yrs ago , he was former and business ma n\",\n        \"mothersdetail\": \"Mother LAKSMI Dies one year ago , she was house wife .\\n\",\n        \"sistersdetail\": \"Vennila -working\",\n        \"brothersdetail\": \"nil\",\n        \"otherrelationdetails\": \"Muthusamy - advocate\\n\",\n        \"memberid\": 1,\n        \"updatedAt\": \"2020-06-11T18:35:33.993Z\",\n        \"createdAt\": \"2020-06-11T18:35:33.993Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "familyinfoNotFound",
+            "description": "<p>familyinfo was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot post familyinfo \"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/familyinfoRoutes.js",
+    "groupTitle": "familyinfo"
+  },
+  {
+    "type": "put",
+    "url": "/familyinfo/:id",
+    "title": "Update specific familyinfo information",
+    "name": "Updatefamilyinfo_information",
+    "group": "familyinfo",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>familyinfo unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fathersdetail",
+            "description": "<p>fathersdetail of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "mothersdetail",
+            "description": "<p>mothersdetail of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "sistersdetail",
+            "description": "<p>sistersdetail  of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "brothersdetail",
+            "description": "<p>brothersdetail  of the familyinfo.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "otherrelationdetails",
+            "description": "<p>otherrelationdetails  of the familyinfo.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"familyinfo updated\",\n    \"data\": {\n        \"fathersdetail\": \"KS CHINNASAMY He Died 2 yrs ago , he was former and business ma n\",\n        \"mothersdetail\": \"Mother LAKSMI Dies one year ago , she was house wife .\\n\",\n        \"sistersdetail\": \"Vennila -working.\",\n        \"brothersdetail\": \"nil\",\n        \"otherrelationdetails\": \"Muthusamy - advocate\\n\",\n        \"memberid\": \"1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "familyinfoNotFound",
+            "description": "<p>The id of the familyinfo was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find familyinfo with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/familyinfoRoutes.js",
+    "groupTitle": "familyinfo"
   },
   {
     "type": "delete",
@@ -3887,6 +4771,385 @@
     "version": "0.0.0",
     "filename": "api/server/routes/ignoredRoutes.js",
     "groupTitle": "ignoredusers"
+  },
+  {
+    "type": "delete",
+    "url": "/knowndetail/:id",
+    "title": "Delete specific knowndetail information",
+    "name": "Deleteknowndetail_information",
+    "group": "knowndetail",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>knowndetail unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n       {\n      \"status\": \"success\",\n    \"message\": \"knowndetail deleted\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "knowndetailNotFound",
+            "description": "<p>The id of the knowndetail was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find knowndetail with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/knowndetailRoutes.js",
+    "groupTitle": "knowndetail"
+  },
+  {
+    "type": "get",
+    "url": "/knowndetail/",
+    "title": "Request get all knowndetail information",
+    "name": "GetAllknowndetail",
+    "group": "knowndetail",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"knowndetails retrieved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"relative\": \"kumaran- working builder\",\n            \"friend\": \"anbu - working IT engineer\",\n            \"memberid\": 1,\n            \"createdAt\": \"2020-06-11T18:46:42.197Z\",\n            \"updatedAt\": \"2020-06-11T18:46:42.197Z\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "knowndetailNotfound",
+            "description": "<p>knowndetail was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"knowndetailNotfound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/knowndetailRoutes.js",
+    "groupTitle": "knowndetail"
+  },
+  {
+    "type": "get",
+    "url": "/knowndetail/:id",
+    "title": "Request specific knowndetail information",
+    "name": "Get_Specific_knowndetail",
+    "group": "knowndetail",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>knowndetail unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"Found knowndetail\",\n    \"data\": {\n        \"id\": 1,\n        \"relative\": \"kumaran- working builder\",\n        \"friend\": \"anbu - working IT engineer\",\n        \"memberid\": 1,\n        \"createdAt\": \"2020-06-11T18:46:42.197Z\",\n        \"updatedAt\": \"2020-06-11T18:46:42.197Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "knowndetailNotFound",
+            "description": "<p>knowndetail with id was not  found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n   \"message\": \"Cannot find knowndetail with the id 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/knowndetailRoutes.js",
+    "groupTitle": "knowndetail"
+  },
+  {
+    "type": "post",
+    "url": "/knowndetail/",
+    "title": "add knowndetail information",
+    "name": "Getknowndetail",
+    "group": "knowndetail",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the knowndetail.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "relative",
+            "description": "<p>relative of the knowndetail.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "friend",
+            "description": "<p>friend of the knowndetail.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"knowndetail Added!\",\n    \"data\": {\n        \"id\": 1,\n        \"relative\": \"kumaran- working builder\",\n        \"friend\": \"anbu - working IT engineer\",\n        \"memberid\": 1,\n        \"updatedAt\": \"2020-06-11T18:46:42.197Z\",\n        \"createdAt\": \"2020-06-11T18:46:42.197Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "knowndetailNotFound",
+            "description": "<p>knowndetail was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot post knowndetail \"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/knowndetailRoutes.js",
+    "groupTitle": "knowndetail"
+  },
+  {
+    "type": "put",
+    "url": "/knowndetail/:id",
+    "title": "Update specific knowndetail information",
+    "name": "Updateknowndetail_information",
+    "group": "knowndetail",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>knowndetail unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the knowndetail.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "relative",
+            "description": "<p>relative of the knowndetail.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "friend",
+            "description": "<p>friend of the knowndetail.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"knowndetail updated\",\n    \"data\": {\n        \"relative\": \"kumaran- working builder\",\n        \"friend\": \"Anbu - working IT engineer\",\n        \"memberid\": \"1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "knowndetailNotFound",
+            "description": "<p>The id of the knowndetail was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find knowndetail with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/knowndetailRoutes.js",
+    "groupTitle": "knowndetail"
   },
   {
     "type": "delete",
@@ -5472,6 +6735,497 @@
     "version": "0.0.0",
     "filename": "api/server/routes/personeldetailsRoutes.js",
     "groupTitle": "personeldetails"
+  },
+  {
+    "type": "delete",
+    "url": "/physicalappearance/:id",
+    "title": "Delete specific physicalappearance information",
+    "name": "Deletephysicalappearance_information",
+    "group": "physicalappearance",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>physicalappearance unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n    {\n       {\n      \"status\": \"success\",\n    \"message\": \"physicalappearance deleted\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "physicalappearanceNotFound",
+            "description": "<p>The id of the physicalappearance was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find physicalappearance with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/physicalappearanceRoutes.js",
+    "groupTitle": "physicalappearance"
+  },
+  {
+    "type": "get",
+    "url": "/physicalappearance/",
+    "title": "Request get all physicalappearance information",
+    "name": "GetAllphysicalappearance",
+    "group": "physicalappearance",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"physicalappearances retrieved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"height\": \"1.83 Feet\",\n            \"weight\": \"89\",\n            \"complexion\": \"FAIR\",\n            \"bloodgroup\": \"O+\",\n            \"bodytype\": \"FAT\",\n            \"disability\": \"YES\",\n            \"criticaldisease\": \"YES\",\n            \"normaldisease\": \"no\",\n            \"fertilitytest\": \"DONE\",\n            \"pressuresugarcount\": \"NORMAL\",\n            \"memberid\": 1,\n            \"createdAt\": \"2020-06-11T18:59:30.481Z\",\n            \"updatedAt\": \"2020-06-11T18:59:30.481Z\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "physicalappearanceNotfound",
+            "description": "<p>physicalappearance was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"physicalappearanceNotfound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/physicalappearanceRoutes.js",
+    "groupTitle": "physicalappearance"
+  },
+  {
+    "type": "get",
+    "url": "/physicalappearance/:id",
+    "title": "Request specific physicalappearance information",
+    "name": "Get_Specific_physicalappearance",
+    "group": "physicalappearance",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>physicalappearance unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"Found physicalappearance\",\n    \"data\": {\n        \"id\": 1,\n        \"height\": \"1.83 Feet\",\n        \"weight\": \"89\",\n        \"complexion\": \"FAIR\",\n        \"bloodgroup\": \"O+\",\n        \"bodytype\": \"FAT\",\n        \"disability\": \"YES\",\n        \"criticaldisease\": \"YES\",\n        \"normaldisease\": \"no\",\n        \"fertilitytest\": \"DONE\",\n        \"pressuresugarcount\": \"NORMAL\",\n        \"memberid\": 1,\n        \"createdAt\": \"2020-06-11T18:59:30.481Z\",\n        \"updatedAt\": \"2020-06-11T18:59:30.481Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "physicalappearanceNotFound",
+            "description": "<p>physicalappearance with id was not  found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n   \"message\": \"Cannot find physicalappearance with the id 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/physicalappearanceRoutes.js",
+    "groupTitle": "physicalappearance"
+  },
+  {
+    "type": "post",
+    "url": "/physicalappearance/",
+    "title": "add physicalappearance information",
+    "name": "Getphysicalappearance",
+    "group": "physicalappearance",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "height",
+            "description": "<p>height of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "weight",
+            "description": "<p>weight of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "complexion",
+            "description": "<p>complexion of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "bloodgroup",
+            "description": "<p>bloodgroup of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "bodytype",
+            "description": "<p>bodytype of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "disability",
+            "description": "<p>disability of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "criticaldisease",
+            "description": "<p>criticaldisease of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "normaldisease",
+            "description": "<p>normaldisease of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fertilitytest",
+            "description": "<p>fertilitytest of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "pressuresugarcount",
+            "description": "<p>pressuresugarcount of the physicalappearance.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"physicalappearance Added!\",\n    \"data\": {\n        \"id\": 1,\n        \"height\": \"1.83 Feet\",\n        \"weight\": \"89\",\n        \"complexion\": \"FAIR\",\n        \"bloodgroup\": \"O+\",\n        \"bodytype\": \"FAT\",\n        \"disability\": \"YES\",\n        \"criticaldisease\": \"YES\",\n        \"normaldisease\": \"no\",\n        \"fertilitytest\": \"DONE\",\n        \"pressuresugarcount\": \"NORMAL\",\n        \"memberid\": 1,\n        \"updatedAt\": \"2020-06-11T18:59:30.481Z\",\n        \"createdAt\": \"2020-06-11T18:59:30.481Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "physicalappearanceNotFound",
+            "description": "<p>physicalappearance was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot post physicalappearance \"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/physicalappearanceRoutes.js",
+    "groupTitle": "physicalappearance"
+  },
+  {
+    "type": "put",
+    "url": "/physicalappearance/:id",
+    "title": "Update specific physicalappearance information",
+    "name": "Updatephysicalappearance_information",
+    "group": "physicalappearance",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>physicalappearance unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "memberid",
+            "description": "<p>memberid of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "height",
+            "description": "<p>height of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "weight",
+            "description": "<p>weight of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "complexion",
+            "description": "<p>complexion of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "bloodgroup",
+            "description": "<p>bloodgroup of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "bodytype",
+            "description": "<p>bodytype of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "disability",
+            "description": "<p>disability of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "criticaldisease",
+            "description": "<p>criticaldisease of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "normaldisease",
+            "description": "<p>normaldisease of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fertilitytest",
+            "description": "<p>fertilitytest of the physicalappearance.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "pressuresugarcount",
+            "description": "<p>pressuresugarcount of the physicalappearance.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"status\": \"success\",\n    \"message\": \"physicalappearance updated\",\n    \"data\": {\n        \"height\": \"1.83 Feet\",\n        \"weight\": \"91\",\n        \"complexion\": \"FAIR\",\n        \"bloodgroup\": \"O+\",\n        \"bodytype\": \"FAT\",\n        \"disability\": \"YES\",\n        \"criticaldisease\": \"YES\",\n        \"normaldisease\": \"no\",\n        \"fertilitytest\": \"DONE\",\n        \"pressuresugarcount\": \"NORMAL\",\n        \"memberid\": \"1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "physicalappearanceNotFound",
+            "description": "<p>The id of the physicalappearance was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n \"status\": \"error\",\n  \"message\": \"Cannot find physicalappearance with the id: 2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/physicalappearanceRoutes.js",
+    "groupTitle": "physicalappearance"
   },
   {
     "type": "delete",
