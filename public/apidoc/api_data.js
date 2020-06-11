@@ -2209,13 +2209,6 @@ define({ "api": [
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "x-access-token",
-            "description": "<p>Users unique api-token.</p>"
-          },
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
             "field": "Content-Type",
             "description": "<p>application/json.</p>"
           }
@@ -2225,6 +2218,13 @@ define({ "api": [
     "success": {
       "fields": {
         "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "aadharno",
+            "description": "<p>aadharno of the User.</p>"
+          },
           {
             "group": "Success 200",
             "type": "String",
@@ -2280,13 +2280,20 @@ define({ "api": [
             "optional": false,
             "field": "contactobj",
             "description": "<p>contactobj of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "imgurl",
+            "description": "<p>imgurl of the user.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n     \"firstname\": \"gokmathiakka\",\n        \"lastname\": \"ambika\",\n        \"gender\": \"female\",\n        \"dob\": \"2012-04-23T18:25:43.511Z\",\n        \"onbehalf\": \"self\",\n        \"password\": \"goms@11\",\n        \"premium\": true,\n        \"contactobj\": {\n            \"mobile\": 122772332,\n            \"email\": \"kodi@gmail.com\",\n            \"facebook\": null,\n            \"linkedin\": null,\n            \"UserMemberid\": 1,\n            \"createdAt\": \"2020-05-14T17:02:49.008Z\",\n            \"updatedAt\": \"2020-05-14T17:02:49.008Z\"\n        }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n      \"aadharno\":\"12323242424\",\n     \"firstname\": \"gokmathiakka\",\n        \"lastname\": \"ambika\",\n        \"gender\": \"female\",\n        \"dob\": \"2012-04-23T18:25:43.511Z\",\n        \"onbehalf\": \"self\",\n        \"password\": \"goms@11\",\n        \"premium\": true,\n        \"imgurl\":\"https://testingbook-demo.herokuapp.com/Anandh.jpg\",\n        \"contactobj\": {\n            \"mobile\": 122772332,\n            \"email\": \"kodi@gmail.com\",\n            \"facebook\": null,\n            \"linkedin\": null,\n            \"UserMemberid\": 1,\n            \"createdAt\": \"2020-05-14T17:02:49.008Z\",\n            \"updatedAt\": \"2020-05-14T17:02:49.008Z\"\n        }\n}",
           "type": "json"
         }
       ]
@@ -2632,13 +2639,6 @@ define({ "api": [
             "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "x-access-token",
-            "description": "<p>Users unique api-token.</p>"
-          },
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
             "field": "Content-Type",
             "description": "<p>application/x-www-form-urlencoded.</p>"
           }
@@ -2667,7 +2667,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n  {\n\"status\": \"success\",\n  \"message\": \"Found User\",\n  \"data\": {\n      \"auth\": true,\n      \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTAwMDYwMjQsImV4cCI6MTU5MDA5MjQyNH0.b5QC4XKpJ-Qm27d5pF81NLeJ5JRYwtBcKkmKS7p-TEo\"\n  }\n  }",
+          "content": "    HTTP/1.1 200 OK\n {\n    \"status\": \"success\",\n    \"message\": \"Found User\",\n    \"data\": {\n        \"auth\": true,\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTE5MDQxMjYsImV4cCI6MTU5MTk5MDUyNn0.TkmFPGLvI_ykRsZuSxiGBcemDdRiNhyJqlWfn4gexLY\",\n        \"data\": {\n            \"aadharno\": \"1223223\",\n            \"firstname\": \"Manojkumar\",\n            \"lastname\": \"manikkam\",\n            \"gender\": \"male\",\n            \"dob\": \"2012-04-23T18:25:43.511Z\",\n            \"memberid\": 1,\n            \"onbehalf\": \"self\",\n            \"password\": \"manojkumar@11\",\n            \"premium\": true,\n            \"imgurl\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTojYs59LJ19HQR9HEf6vds1to-FQW1kItsFJp-7Rnv-_13rLZ4&usqp=CAU\",\n            \"createdAt\": \"2020-06-11T19:34:40.136Z\",\n            \"updatedAt\": \"2020-06-11T19:34:40.136Z\",\n            \"Contactinfo\": {\n                \"mobile\": \"122772332\",\n                \"email\": \"manojkumar18tpr@gmail.com\",\n                \"facebook\": null,\n                \"linkedin\": null,\n                \"UserMemberid\": 1,\n                \"createdAt\": \"2020-06-11T19:34:40.164Z\",\n                \"updatedAt\": \"2020-06-11T19:34:40.164Z\"\n            }\n        }\n    }\n}",
           "type": "json"
         }
       ]
