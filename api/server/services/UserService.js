@@ -81,6 +81,9 @@ return arr;
   }
 
   static async updateUser(id, updateUser) {
+    console.log("here update",updateUser);
+    console.log("id"+id);
+    
     try {
       const UserToUpdate = await database.User.findOne({
         where: { memberid: Number(id) }

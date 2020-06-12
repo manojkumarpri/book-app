@@ -69,11 +69,13 @@ class UserController {
   static async updatedUser(req, res) {
     const alteredUser = req.body;
     const { id } = req.params;
+    console.log("oputid"+id+"and obj",alteredUser);
     if (!Number(id)) {
       util.setError(400, 'Please input a valid numeric value');
       return util.send(res);
     }
     try {
+      
       const updateUser = await UserService.updateUser(id, alteredUser);
       if (!updateUser) {
         util.setError(404, `Cannot find User with the id: ${id}`);
