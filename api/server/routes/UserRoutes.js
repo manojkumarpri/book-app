@@ -241,7 +241,7 @@ router.get('/:id',[authJwt2.verifyToken2],UserController.getAUser);
       "message": "Cannot find User with the id: 2"
  *     }
  */
-router.put('/:id',[authJwt.verifyToken],UserController.updatedUser);
+router.put('/:id',[authJwt2.verifyToken2],UserController.updatedUser);
 /**
 * @api {delete} /users/:id Delete specific User information
  * @apiName DeleteUser information
