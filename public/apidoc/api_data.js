@@ -4043,6 +4043,110 @@ define({ "api": [
     "groupTitle": "familyinfo"
   },
   {
+    "type": "post",
+    "url": "/community/filterusers",
+    "title": "filterusers information",
+    "name": "Getfilterusers",
+    "group": "filterusers",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>Users unique api-token.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/x-www-form-urlencoded.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>gender of the Users.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "fromAge",
+            "description": "<p>fromAge of the Users.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "toAge",
+            "description": "<p>toAge  of the Users.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "religion",
+            "description": "<p>religion  of the Users.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "caste",
+            "description": "<p>caste  of the Users.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "subcaste",
+            "description": "<p>subcaste  of the Users.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": \"success\",\n\"message\": \"Filter Results retrieved\",\n\"data\": [\n    {\n        \"aadharno\": \"1234567891011\",\n        \"firstname\": \"Manojkumar\",\n        \"lastname\": \"manikkam\",\n        \"gender\": \"male\",\n        \"dob\": \"2012-04-23T18:25:43.511Z\",\n        \"memberid\": 2,\n        \"onbehalf\": \"self\",\n        \"password\": \"manoj@11\",\n        \"premium\": true,\n        \"imgurl\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTojYs59LJ19HQR9HEf6vds1to-FQW1kItsFJp-7Rnv-_13rLZ4&usqp=CAU\",\n        \"createdAt\": \"2020-06-16T16:54:08.371Z\",\n        \"updatedAt\": \"2020-06-16T16:54:08.371Z\",\n        \"Contactinfo.mobile\": \"122772332\",\n        \"Contactinfo.email\": \"manojkumar11tpr@gmail.com\",\n        \"Contactinfo.facebook\": null,\n        \"Contactinfo.linkedin\": null,\n        \"Contactinfo.UserMemberid\": 2,\n        \"Contactinfo.createdAt\": \"2020-06-16T16:54:08.421Z\",\n        \"Contactinfo.updatedAt\": \"2020-06-16T16:54:08.421Z\"\n    }\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "FilterResultsNotFound",
+            "description": "<p>Filter Results was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"error\",\n     \"message\": \"Cannot post Filter Results \"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/server/routes/communityRoutes.js",
+    "groupTitle": "filterusers"
+  },
+  {
     "type": "delete",
     "url": "/followed/:id",
     "title": "Delete specific followedusers information",
