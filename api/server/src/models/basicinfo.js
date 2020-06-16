@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     dob:{
       type:DataTypes.DATE,
       allowNull: false
+    },
+    age:{
+      type:DataTypes.INTEGER,
+      allowNull: false
     }, 
     mothername:{
       type:DataTypes.STRING,
@@ -44,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     memberid:{
       type:DataTypes.INTEGER,
       allowNull: false
-    }, 
+    },
   }, {});
   basicinfo.associate = function(models) {
     // associations can be defined here

@@ -8,7 +8,23 @@ class communityService {
       throw error;
     }
   }
+static async getparticularcommunitys(obj){
 
+  try {
+    return await database.community.findAll({
+      where: {
+        religion: obj.religion,
+        caste: obj.caste,
+        subcaste: obj.subcaste
+       
+      },
+      raw : true 
+    });
+  } catch (error) {
+    console.log("err",error)
+    throw error;
+  }
+}
   static async addcommunity(newcommunity) {
     try {
       return await database.community.create(newcommunity);

@@ -20,6 +20,9 @@ module.exports = {
       dob: {
         type: Sequelize.DATE
       },
+      age: {
+        type: Sequelize.INTEGER
+      },
       mothername: {
         type: Sequelize.STRING
       },

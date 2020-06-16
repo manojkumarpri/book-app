@@ -62,7 +62,7 @@ db.Sequelize = Sequelize;
 //Models/tables
 db.User = require('../models/user.js')(sequelize, Sequelize);
 db.Contactinfo = require('../models/contactinfo.js')(sequelize, Sequelize);
-  
+
 
 //Relations
 db.Contactinfo.belongsTo(db.User);

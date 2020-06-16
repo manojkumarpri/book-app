@@ -4,6 +4,67 @@ const authJwt = require('./verifyJwtToken');
 const authJwt2=require('./verifyJwtToken2');
 
 const router = Router();
+
+/**
+ * @api {post} /community/filterusers  filterusers information
+ * @apiName Getfilterusers
+ *  * @apiGroup filterusers
+ * @apiHeader {String} x-access-token Users unique api-token.
+  *  @apiHeader {String} Content-Type application/x-www-form-urlencoded.
+
+ *
+ 
+ * @apiSuccess {String} gender  gender of the Users.
+ * @apiSuccess {String} fromAge  fromAge of the Users. 
+ * @apiSuccess {String} toAge  toAge  of the Users. 
+ *  @apiSuccess {String} religion  religion  of the Users. 
+
+ * @apiSuccess {String} caste  caste  of the Users. 
+ * @apiSuccess {String} subcaste  subcaste  of the Users. 
+
+
+
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+    "status": "success",
+    "message": "Filter Results retrieved",
+    "data": [
+        {
+            "aadharno": "1234567891011",
+            "firstname": "Manojkumar",
+            "lastname": "manikkam",
+            "gender": "male",
+            "dob": "2012-04-23T18:25:43.511Z",
+            "memberid": 2,
+            "onbehalf": "self",
+            "password": "manoj@11",
+            "premium": true,
+            "imgurl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTojYs59LJ19HQR9HEf6vds1to-FQW1kItsFJp-7Rnv-_13rLZ4&usqp=CAU",
+            "createdAt": "2020-06-16T16:54:08.371Z",
+            "updatedAt": "2020-06-16T16:54:08.371Z",
+            "Contactinfo.mobile": "122772332",
+            "Contactinfo.email": "manojkumar11tpr@gmail.com",
+            "Contactinfo.facebook": null,
+            "Contactinfo.linkedin": null,
+            "Contactinfo.UserMemberid": 2,
+            "Contactinfo.createdAt": "2020-06-16T16:54:08.421Z",
+            "Contactinfo.updatedAt": "2020-06-16T16:54:08.421Z"
+        }
+    ]
+ *     }
+ *
+ * @apiError  FilterResultsNotFound Filter Results was not found.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "status": "error",
+         "message": "Cannot post Filter Results "
+ *     }
+ */
+router.post('/filterusers',[authJwt2.verifyToken2], communityController.getparticularcommunitys);
+
 /**
  * @api {get} /community/ Request get all community information
  * @apiName GetAllcommunity

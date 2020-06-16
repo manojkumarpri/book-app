@@ -138,6 +138,7 @@ static async getAUsersignin(aadharno){
 console.log("here firstname",theUser.dataValues)
     return theUser.dataValues;
   } catch (error) {
+    console.log("err",error)
     throw error;
   }
 }
@@ -161,7 +162,33 @@ console.log("here id",theUser)
       throw error;
     }
   }
+  static async getparticularUser(arr) {
+    console.log("here arr",arr);
+    var res = arr.map(function(v) {
+      return parseInt(v, 10);
+    });
 
+    try {
+      const theUser = await db.User.findAll({
+        where: {
+          memberid: res
+        }
+    ,
+        include: [
+          {
+            model: db.Contactinfo
+          }
+        ],
+        raw:true
+    
+
+      });
+console.log("here id",theUser)
+      return theUser;
+    } catch (error) {
+      throw error;
+    }
+  }
   static async deleteUser(id) {
     try {
       const UserToDelete = await database.User.findOne({ where: { memberid: Number(id) } });

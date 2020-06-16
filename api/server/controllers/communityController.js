@@ -1,4 +1,6 @@
 import communityService from '../services/communityService';
+import basicinfoService from '../services/basicinfoService';
+import UserService from '../services/UserService';
 import Util from '../utils/Utils';
 
 const util = new Util();
@@ -18,7 +20,46 @@ class communityController {
       return util.send(res);
     }
   }
-
+  static async getparticularcommunitys(req, res) {
+    try {
+      console.log("here reqobj",req.body);
+      const allcommunitys = await communityService.getparticularcommunitys(req.body);
+      console.log("allcommunitys",allcommunitys); 
+      const allbasicinfos= await basicinfoService.getparticularbasicinfos(req.body);
+    
+      console.log("allcommunitys",allbasicinfos); 
+    if (allcommunitys.length > 0 && allbasicinfos.length>0) {
+   
+      var communitymembers = allcommunitys.map(function(el) {
+          return el.memberid;
+        });
+        var basicinfomembers = allbasicinfos.map(function(el) {
+          return el.memberid;
+        });
+        var res1 = basicinfomembers.filter( function(n) { return this.has(n) }, new Set(communitymembers) );
+      
+         const finalresults=await UserService.getparticularUser(res1);
+         if(finalresults.length>0){
+         util.setSuccess(200, 'Filter Results retrieved', finalresults);
+         return util.send(res);
+         }
+         else{
+          util.setSuccess(200, 'No filter Results found');
+          return util.send(res);
+         }
+       
+        
+      } else {
+        util.setSuccess(200, 'No filter Results found');
+        return util.send(res);
+      }
+      return util.send(res);
+    } catch (error) {
+      console.log("here serrr",error)
+      util.setError(400, error);
+      return util.send(res);
+    }
+  }
   static async addcommunity(req, res) {
     if (!req.body.religion || !req.body.community || !req.body.caste) {
       util.setError(400, 'Please provide complete details');
