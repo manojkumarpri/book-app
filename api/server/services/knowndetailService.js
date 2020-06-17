@@ -21,11 +21,11 @@ class knowndetailService {
   static async updateknowndetail(id, updateknowndetail) {
     try {
       const knowndetailToUpdate = await database.knowndetail.findOne({
-        where: { id: Number(id) }
+        where: { memberid: Number(id) }
       });
 
       if (knowndetailToUpdate) {
-        await database.knowndetail.update(updateknowndetail, { where: { id: Number(id) } });
+        await database.knowndetail.update(updateknowndetail, { where: { memberid: Number(id) } });
 
         return updateknowndetail;
       }
@@ -38,7 +38,7 @@ class knowndetailService {
   static async getAknowndetail(id) {
     try {
       const theknowndetail = await database.knowndetail.findOne({
-        where: { id: Number(id) }
+        where: { memberid: Number(id) }
       });
 
       return theknowndetail;
@@ -49,11 +49,11 @@ class knowndetailService {
 
   static async deleteknowndetail(id) {
     try {
-      const knowndetailToDelete = await database.knowndetail.findOne({ where: { id: Number(id) } });
+      const knowndetailToDelete = await database.knowndetail.findOne({ where: { memberid: Number(id) } });
 
       if (knowndetailToDelete) {
         const deletedknowndetail = await database.knowndetail.destroy({
-          where: { id: Number(id) }
+          where: { memberid: Number(id) }
         });
         return deletedknowndetail;
       }

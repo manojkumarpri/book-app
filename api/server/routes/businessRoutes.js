@@ -18,24 +18,25 @@ const authJwt2=require('./verifyJwtToken2');
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *   "status": "success",
+    "status": "success",
     "message": "businesss retrieved",
     "data": [
         {
             "id": 1,
-            "memberid": 1,
-            "businessname": "Shinelogics infotech",
-            "position": "software Developer",
-            "annualctc": "3.5 lakh",
-            "employeeid": "sl0061",
-            "businessplace": "SRP Tools,thiruvanmaiyur ,chennai",
+            "memberid": 2,
+            "businessname": "shinelogicsinfotech",
+            "position": "software developer",
+            "annualctc": "3.5lakh",
+            "employeeid": "sl59",
+            "businessplace": "chennai",
             "experience": "2 years",
-            "totalasset": "3.5 crore",
-            "totalliability": "40 lakhs",
+            "totalasset": "2 crore",
+            "totalliability": "5 crore",
             "house": "own",
-            "ancestorproperty": "10 lakh",
-            "createdAt": "2020-05-14T18:30:38.279Z",
-            "updatedAt": "2020-05-14T18:30:38.279Z"
+            "ancestorproperty": "no",
+            "businesscategory": "software",
+            "createdAt": "2020-06-17T15:05:31.033Z",
+            "updatedAt": "2020-06-17T15:05:31.033Z"
         }
     ]
  *     }
@@ -68,27 +69,28 @@ router.get('/',[authJwt2.verifyToken2], businessController.getAllbusinesss);
  @apiSuccess {String} totalliability  totalliability  of the User.
  @apiSuccess {String} house  house  of the User.
   @apiSuccess {String} ancestorproperty  ancestorproperty  of the User.
-
+  @apiSuccess {String} businesscategory  businesscategory  of the User.
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *   "status": "success",
+  "status": "success",
     "message": "business Added!",
     "data": {
-        "id": 2,
+        "id": 1,
         "memberid": 2,
-        "businessname": "Shinelogics infotech",
-        "position": "software Developer",
-        "annualctc": "3.5 lakh",
-        "employeeid": "sl0061",
-        "businessplace": "SRP Tools,thiruvanmaiyur ,chennai",
+        "businessname": "shinelogicsinfotech",
+        "position": "software developer",
+        "annualctc": "3.5lakh",
+        "employeeid": "sl59",
+        "businessplace": "chennai",
         "experience": "2 years",
-        "totalasset": "3.5 crore",
-        "totalliability": "40 lakhs",
+        "totalasset": "2 crore",
+        "totalliability": "5 crore",
         "house": "own",
-        "ancestorproperty": "10 lakh",
-        "updatedAt": "2020-05-16T12:40:06.040Z",
-        "createdAt": "2020-05-16T12:40:06.040Z"
+        "ancestorproperty": "no",
+        "businesscategory": "software",
+        "updatedAt": "2020-06-17T15:05:31.033Z",
+        "createdAt": "2020-06-17T15:05:31.033Z"
     }
  *     }
  *
@@ -116,23 +118,24 @@ router.post('/',[authJwt.verifyToken], businessController.addbusiness);
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *    "status": "success",
+    "status": "success",
     "message": "Found business",
     "data": {
         "id": 1,
-        "memberid": 1,
-        "businessname": "Shinelogics infotech",
-        "position": "software Developer",
-        "annualctc": "3.5 lakh",
-        "employeeid": "sl0061",
-        "businessplace": "SRP Tools,thiruvanmaiyur ,chennai",
+        "memberid": 2,
+        "businessname": "shinelogicsinfotech",
+        "position": "software developer",
+        "annualctc": "3.5lakh",
+        "employeeid": "sl59",
+        "businessplace": "chennai",
         "experience": "2 years",
-        "totalasset": "3.5 crore",
-        "totalliability": "40 lakhs",
+        "totalasset": "2 crore",
+        "totalliability": "5 crore",
         "house": "own",
-        "ancestorproperty": "10 lakh",
-        "createdAt": "2020-05-14T18:30:38.279Z",
-        "updatedAt": "2020-05-14T18:30:38.279Z"
+        "ancestorproperty": "no",
+        "businesscategory": "software",
+        "createdAt": "2020-06-17T15:05:31.033Z",
+        "updatedAt": "2020-06-17T15:05:31.033Z"
     }
  *     }
  *
@@ -168,6 +171,7 @@ router.get('/:id',[authJwt2.verifyToken2],  businessController.getAbusiness);
  @apiSuccess {String} totalliability  totalliability  of the User.
  @apiSuccess {String} house  house  of the User.
   @apiSuccess {String} ancestorproperty  ancestorproperty  of the User.
+  @apiSuccess {String} businesscategory  businesscategory  of the User.
 
 
  * @apiSuccessExample Success-Response:

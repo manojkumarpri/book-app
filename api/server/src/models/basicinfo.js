@@ -49,6 +49,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER,
       allowNull: false
     },
+    profession: {
+      type:DataTypes.STRING,
+      allowNull: false
+    },
   }, {});
   basicinfo.associate = function(models) {
     // associations can be defined here

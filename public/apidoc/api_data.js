@@ -577,7 +577,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n      \"status\": \"success\",\n        \"message\": \"Found basicinfo\",\n           \"data\": {\n                          \"id\": 1,\n                   \"firstname\": \"Manojkumar\",\n                    \"lastname\": \"Manikkam\",\n                      \"gender\": \"male\",\n                         \"dob\": \"2020-05-14T18:11:41.380Z\",\n                  \"mothername\": \"ambika\",\n                  \"fathername\": \"Manikkam\",\n              \"maritialstatus\": \"single\",\n                      \"native\": \"tiruppur\",\n                      \"living\": \"chennai\",\n                    \"onbehalf\": \"self\",\n                    \"memberid\": 1,\n                   \"createdAt\": \"2020-05-14T18:38:59.495Z\",\n                   \"updatedAt\": \"2020-05-14T18:38:59.495Z\"\n                   }\n}",
+          "content": "   HTTP/1.1 200 OK\n   {\n\"status\": \"success\",\n   \"message\": \"basicinfos retrieved\",\n   \"data\": [\n       {\n           \"id\": 1,\n           \"firstname\": \"Manojkumar\",\n           \"lastname\": \"manikkam\",\n           \"gender\": \"male\",\n           \"dob\": \"2012-04-23T18:25:43.511Z\",\n           \"age\": 25,\n           \"mothername\": \"ambika\",\n           \"fathername\": \"manikkam\",\n           \"maritialstatus\": \"single\",\n           \"native\": \"tiruppur\",\n           \"living\": \"chennai\",\n           \"onbehalf\": \"self\",\n           \"memberid\": 2,\n           \"profession\": \"softwareDeveloper\",\n           \"createdAt\": \"2020-06-17T12:23:41.814Z\",\n           \"updatedAt\": \"2020-06-17T12:23:41.814Z\"\n       }\n   ]\n   }",
           "type": "json"
         }
       ]
@@ -710,13 +710,20 @@ define({ "api": [
             "optional": false,
             "field": "onbehalf",
             "description": "<p>onbehalf  of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "profession",
+            "description": "<p>profession  of the User.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n                    \"status\": \"success\",\n                      \"message\": \"basicinfo Added!\",\n                         \"data\": {\n                                        \"id\": 2,\n                                 \"firstname\": \"Manojkumar\",\n                                  \"lastname\": \"Manikkam\",\n                                    \"gender\": \"male\",\n                                       \"dob\": \"2020-05-14T18:11:41.380Z\",\n                                \"mothername\": \"ambika\",\n                                \"fathername\": \"Manikkam\",\n                            \"maritialstatus\": \"single\",\n                                    \"native\": \"tiruppur\",\n                                    \"living\": \"chennai\",\n                                  \"onbehalf\": \"self\",\n                                  \"memberid\": 2,\n                                 \"updatedAt\": \"2020-05-16T09:52:11.149Z\",\n                                 \"createdAt\": \"2020-05-16T09:52:11.149Z\"\n                                  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n                \"status\": \"success\",\n\"message\": \"basicinfo Added!\",\n\"data\": {\n    \"id\": 1,\n    \"lastname\": \"manikkam\",\n    \"firstname\": \"Manojkumar\",\n    \"gender\": \"male\",\n    \"dob\": \"2012-04-23T18:25:43.511Z\",\n    \"memberid\": 2,\n    \"age\": 25,\n    \"mothername\": \"ambika\",\n    \"fathername\": \"manikkam\",\n    \"maritialstatus\": \"single\",\n    \"native\": \"tiruppur\",\n    \"living\": \"chennai\",\n    \"onbehalf\": \"self\",\n    \"profession\": \"softwareDeveloper\",\n    \"updatedAt\": \"2020-06-17T12:23:41.814Z\",\n    \"createdAt\": \"2020-06-17T12:23:41.814Z\"\n}\n}",
           "type": "json"
         }
       ]
@@ -787,7 +794,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n                 \"status\": \"success\",\n                   \"message\": \"Found basicinfo\",\n                      \"data\": {\n                                      \"id\": 2,\n                               \"firstname\": \"Manojkumar\",\n                                \"lastname\": \"Manikkam\",\n                                  \"gender\": \"male\",\n                                     \"dob\": \"2020-05-14T18:11:41.380Z\",\n                              \"mothername\": \"ambika\",\n                              \"fathername\": \"Manikkam\",\n                          \"maritialstatus\": \"single\",\n                                  \"native\": \"tiruppur\",\n                                  \"living\": \"chennai\",\n                                \"onbehalf\": \"self\",\n                                \"memberid\": 2,\n                               \"createdAt\": \"2020-05-16T09:52:11.149Z\",\n                               \"updatedAt\": \"2020-05-16T09:52:11.149Z\"\n                              }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n            \"status\": \"success\",\n\"message\": \"Found basicinfo\",\n\"data\": {\n    \"id\": 1,\n    \"firstname\": \"Manojkumar\",\n    \"lastname\": \"manikkam\",\n    \"gender\": \"male\",\n    \"dob\": \"2012-04-23T18:25:43.511Z\",\n    \"age\": 25,\n    \"mothername\": \"ambika\",\n    \"fathername\": \"manikkam\",\n    \"maritialstatus\": \"single\",\n    \"native\": \"tiruppur\",\n    \"living\": \"chennai\",\n    \"onbehalf\": \"self\",\n    \"memberid\": 2,\n    \"profession\": \"softwareDeveloper\",\n    \"createdAt\": \"2020-06-17T12:23:41.814Z\",\n    \"updatedAt\": \"2020-06-17T12:23:41.814Z\"\n}\n}",
           "type": "json"
         }
       ]
@@ -933,6 +940,13 @@ define({ "api": [
             "optional": false,
             "field": "onbehalf",
             "description": "<p>onbehalf  of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "profession",
+            "description": "<p>profession  of the User.</p>"
           }
         ]
       },
@@ -1068,7 +1082,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n  {\n\"status\": \"success\",\n  \"message\": \"businesss retrieved\",\n  \"data\": [\n      {\n          \"id\": 1,\n          \"memberid\": 1,\n          \"businessname\": \"Shinelogics infotech\",\n          \"position\": \"software Developer\",\n          \"annualctc\": \"3.5 lakh\",\n          \"employeeid\": \"sl0061\",\n          \"businessplace\": \"SRP Tools,thiruvanmaiyur ,chennai\",\n          \"experience\": \"2 years\",\n          \"totalasset\": \"3.5 crore\",\n          \"totalliability\": \"40 lakhs\",\n          \"house\": \"own\",\n          \"ancestorproperty\": \"10 lakh\",\n          \"createdAt\": \"2020-05-14T18:30:38.279Z\",\n          \"updatedAt\": \"2020-05-14T18:30:38.279Z\"\n      }\n  ]\n  }",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": \"success\",\n\"message\": \"businesss retrieved\",\n\"data\": [\n    {\n        \"id\": 1,\n        \"memberid\": 2,\n        \"businessname\": \"shinelogicsinfotech\",\n        \"position\": \"software developer\",\n        \"annualctc\": \"3.5lakh\",\n        \"employeeid\": \"sl59\",\n        \"businessplace\": \"chennai\",\n        \"experience\": \"2 years\",\n        \"totalasset\": \"2 crore\",\n        \"totalliability\": \"5 crore\",\n        \"house\": \"own\",\n        \"ancestorproperty\": \"no\",\n        \"businesscategory\": \"software\",\n        \"createdAt\": \"2020-06-17T15:05:31.033Z\",\n        \"updatedAt\": \"2020-06-17T15:05:31.033Z\"\n    }\n]\n}",
           "type": "json"
         }
       ]
@@ -1201,13 +1215,20 @@ define({ "api": [
             "optional": false,
             "field": "ancestorproperty",
             "description": "<p>ancestorproperty  of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "businesscategory",
+            "description": "<p>businesscategory  of the User.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "  HTTP/1.1 200 OK\n  {\n\"status\": \"success\",\n  \"message\": \"business Added!\",\n  \"data\": {\n      \"id\": 2,\n      \"memberid\": 2,\n      \"businessname\": \"Shinelogics infotech\",\n      \"position\": \"software Developer\",\n      \"annualctc\": \"3.5 lakh\",\n      \"employeeid\": \"sl0061\",\n      \"businessplace\": \"SRP Tools,thiruvanmaiyur ,chennai\",\n      \"experience\": \"2 years\",\n      \"totalasset\": \"3.5 crore\",\n      \"totalliability\": \"40 lakhs\",\n      \"house\": \"own\",\n      \"ancestorproperty\": \"10 lakh\",\n      \"updatedAt\": \"2020-05-16T12:40:06.040Z\",\n      \"createdAt\": \"2020-05-16T12:40:06.040Z\"\n  }\n  }",
+          "content": "  HTTP/1.1 200 OK\n  {\n\"status\": \"success\",\n  \"message\": \"business Added!\",\n  \"data\": {\n      \"id\": 1,\n      \"memberid\": 2,\n      \"businessname\": \"shinelogicsinfotech\",\n      \"position\": \"software developer\",\n      \"annualctc\": \"3.5lakh\",\n      \"employeeid\": \"sl59\",\n      \"businessplace\": \"chennai\",\n      \"experience\": \"2 years\",\n      \"totalasset\": \"2 crore\",\n      \"totalliability\": \"5 crore\",\n      \"house\": \"own\",\n      \"ancestorproperty\": \"no\",\n      \"businesscategory\": \"software\",\n      \"updatedAt\": \"2020-06-17T15:05:31.033Z\",\n      \"createdAt\": \"2020-06-17T15:05:31.033Z\"\n  }\n  }",
           "type": "json"
         }
       ]
@@ -1278,7 +1299,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n {\n\"status\": \"success\",\n \"message\": \"Found business\",\n \"data\": {\n     \"id\": 1,\n     \"memberid\": 1,\n     \"businessname\": \"Shinelogics infotech\",\n     \"position\": \"software Developer\",\n     \"annualctc\": \"3.5 lakh\",\n     \"employeeid\": \"sl0061\",\n     \"businessplace\": \"SRP Tools,thiruvanmaiyur ,chennai\",\n     \"experience\": \"2 years\",\n     \"totalasset\": \"3.5 crore\",\n     \"totalliability\": \"40 lakhs\",\n     \"house\": \"own\",\n     \"ancestorproperty\": \"10 lakh\",\n     \"createdAt\": \"2020-05-14T18:30:38.279Z\",\n     \"updatedAt\": \"2020-05-14T18:30:38.279Z\"\n }\n }",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": \"success\",\n\"message\": \"Found business\",\n\"data\": {\n    \"id\": 1,\n    \"memberid\": 2,\n    \"businessname\": \"shinelogicsinfotech\",\n    \"position\": \"software developer\",\n    \"annualctc\": \"3.5lakh\",\n    \"employeeid\": \"sl59\",\n    \"businessplace\": \"chennai\",\n    \"experience\": \"2 years\",\n    \"totalasset\": \"2 crore\",\n    \"totalliability\": \"5 crore\",\n    \"house\": \"own\",\n    \"ancestorproperty\": \"no\",\n    \"businesscategory\": \"software\",\n    \"createdAt\": \"2020-06-17T15:05:31.033Z\",\n    \"updatedAt\": \"2020-06-17T15:05:31.033Z\"\n}\n}",
           "type": "json"
         }
       ]
@@ -1424,6 +1445,13 @@ define({ "api": [
             "optional": false,
             "field": "ancestorproperty",
             "description": "<p>ancestorproperty  of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "businesscategory",
+            "description": "<p>businesscategory  of the User.</p>"
           }
         ]
       },

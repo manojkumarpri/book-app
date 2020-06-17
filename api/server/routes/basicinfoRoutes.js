@@ -18,24 +18,28 @@ const authJwt2=require('./verifyJwtToken2');
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *           "status": "success",
-            "message": "Found basicinfo",
-               "data": {
-                              "id": 1,
-                       "firstname": "Manojkumar",
-                        "lastname": "Manikkam",
-                          "gender": "male",
-                             "dob": "2020-05-14T18:11:41.380Z",
-                      "mothername": "ambika",
-                      "fathername": "Manikkam",
-                  "maritialstatus": "single",
-                          "native": "tiruppur",
-                          "living": "chennai",
-                        "onbehalf": "self",
-                        "memberid": 1,
-                       "createdAt": "2020-05-14T18:38:59.495Z",
-                       "updatedAt": "2020-05-14T18:38:59.495Z"
-                       }
+ *  "status": "success",
+    "message": "basicinfos retrieved",
+    "data": [
+        {
+            "id": 1,
+            "firstname": "Manojkumar",
+            "lastname": "manikkam",
+            "gender": "male",
+            "dob": "2012-04-23T18:25:43.511Z",
+            "age": 25,
+            "mothername": "ambika",
+            "fathername": "manikkam",
+            "maritialstatus": "single",
+            "native": "tiruppur",
+            "living": "chennai",
+            "onbehalf": "self",
+            "memberid": 2,
+            "profession": "softwareDeveloper",
+            "createdAt": "2020-06-17T12:23:41.814Z",
+            "updatedAt": "2020-06-17T12:23:41.814Z"
+        }
+    ]
  *     }
  *
  * @apiError BasicinfoNotfound  Basicinfo was not found.
@@ -66,27 +70,30 @@ router.get('/',[authJwt2.verifyToken2], basicinfoController.getAllbasicinfos);
  *@apiSuccess {String} native  native  of the User.
  @apiSuccess {String} living  living  of the User.
  @apiSuccess {String} onbehalf  onbehalf  of the User.
+  @apiSuccess {String} profession  profession  of the User.
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *                         "status": "success",
-                          "message": "basicinfo Added!",
-                             "data": {
-                                            "id": 2,
-                                     "firstname": "Manojkumar",
-                                      "lastname": "Manikkam",
-                                        "gender": "male",
-                                           "dob": "2020-05-14T18:11:41.380Z",
-                                    "mothername": "ambika",
-                                    "fathername": "Manikkam",
-                                "maritialstatus": "single",
-                                        "native": "tiruppur",
-                                        "living": "chennai",
-                                      "onbehalf": "self",
-                                      "memberid": 2,
-                                     "updatedAt": "2020-05-16T09:52:11.149Z",
-                                     "createdAt": "2020-05-16T09:52:11.149Z"
-                                      }
+ *                     "status": "success",
+    "message": "basicinfo Added!",
+    "data": {
+        "id": 1,
+        "lastname": "manikkam",
+        "firstname": "Manojkumar",
+        "gender": "male",
+        "dob": "2012-04-23T18:25:43.511Z",
+        "memberid": 2,
+        "age": 25,
+        "mothername": "ambika",
+        "fathername": "manikkam",
+        "maritialstatus": "single",
+        "native": "tiruppur",
+        "living": "chennai",
+        "onbehalf": "self",
+        "profession": "softwareDeveloper",
+        "updatedAt": "2020-06-17T12:23:41.814Z",
+        "createdAt": "2020-06-17T12:23:41.814Z"
+    }
  *     }
  *
  * @apiError BasicinfoNotFound Basicinfo was not found.
@@ -114,24 +121,26 @@ router.post('/',[authJwt.verifyToken],basicinfoController.addbasicinfo);
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *                      "status": "success",
-                       "message": "Found basicinfo",
-                          "data": {
-                                          "id": 2,
-                                   "firstname": "Manojkumar",
-                                    "lastname": "Manikkam",
-                                      "gender": "male",
-                                         "dob": "2020-05-14T18:11:41.380Z",
-                                  "mothername": "ambika",
-                                  "fathername": "Manikkam",
-                              "maritialstatus": "single",
-                                      "native": "tiruppur",
-                                      "living": "chennai",
-                                    "onbehalf": "self",
-                                    "memberid": 2,
-                                   "createdAt": "2020-05-16T09:52:11.149Z",
-                                   "updatedAt": "2020-05-16T09:52:11.149Z"
-                                  }
+ *                 "status": "success",
+    "message": "Found basicinfo",
+    "data": {
+        "id": 1,
+        "firstname": "Manojkumar",
+        "lastname": "manikkam",
+        "gender": "male",
+        "dob": "2012-04-23T18:25:43.511Z",
+        "age": 25,
+        "mothername": "ambika",
+        "fathername": "manikkam",
+        "maritialstatus": "single",
+        "native": "tiruppur",
+        "living": "chennai",
+        "onbehalf": "self",
+        "memberid": 2,
+        "profession": "softwareDeveloper",
+        "createdAt": "2020-06-17T12:23:41.814Z",
+        "updatedAt": "2020-06-17T12:23:41.814Z"
+    }
  *     }
  *
  * @apiError BasicinfoNotFound Basicinfo with id was not  found.
@@ -166,6 +175,7 @@ router.get('/:id',[authJwt2.verifyToken2],  basicinfoController.getAbasicinfo);
  *@apiSuccess {String} native  native  of the User.
  @apiSuccess {String} living  living  of the User.
  @apiSuccess {String} onbehalf  onbehalf  of the User.
+  @apiSuccess {String} profession  profession  of the User.
 
 
  * @apiSuccessExample Success-Response:

@@ -45,7 +45,11 @@ module.exports = (sequelize, DataTypes) => {
     ancestorproperty: {
       type:DataTypes.STRING,
       allowNull: false
-    }
+    },
+    businesscategory:{
+      type:DataTypes.STRING,
+      allowNull: false
+    },
   }, {});
   business.associate = function(models) {
     // associations can be defined here

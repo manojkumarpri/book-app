@@ -1,44 +1,50 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('businesses', {
+    return queryInterface.createTable('basicinfos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      firstname: {
+        type: Sequelize.STRING
+      },
+      lastname: {
+        type: Sequelize.STRING
+      },
+      gender: {
+        type: Sequelize.STRING
+      },
+      dob: {
+        type: Sequelize.DATE
+      },
+      age: {
+        type: Sequelize.INTEGER
+      },
+      mothername: {
+        type: Sequelize.STRING
+      },
+      fathername: {
+        type: Sequelize.STRING
+      },
+      maritialstatus: {
+        type: Sequelize.STRING
+      },
+      native: {
+        type: Sequelize.STRING
+      },
+      living: {
+        type: Sequelize.STRING
+      },
+      onbehalf: {
+        type: Sequelize.STRING
+      },
       memberid: {
         type: Sequelize.INTEGER
       },
-      businessname: {
-        type: Sequelize.STRING
-      },
-      position: {
-        type: Sequelize.STRING
-      },
-      annualctc: {
-        type: Sequelize.STRING
-      },
-      employeeid: {
-        type: Sequelize.STRING
-      },
-      businessplace: {
-        type: Sequelize.STRING
-      },
-      experience: {
-        type: Sequelize.STRING
-      },
-      totalasset: {
-        type: Sequelize.STRING
-      },
-      totalliability: {
-        type: Sequelize.STRING
-      },
-      house: {
-        type: Sequelize.STRING
-      },
-      ancestorproperty: {
+      profession: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -52,6 +58,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('businesses');
+    return queryInterface.dropTable('basicinfos');
   }
 };

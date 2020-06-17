@@ -21,11 +21,11 @@ class familyinfoService {
   static async updatefamilyinfo(id, updatefamilyinfo) {
     try {
       const familyinfoToUpdate = await database.familyinfo.findOne({
-        where: { id: Number(id) }
+        where: { memberid: Number(id) }
       });
 
       if (familyinfoToUpdate) {
-        await database.familyinfo.update(updatefamilyinfo, { where: { id: Number(id) } });
+        await database.familyinfo.update(updatefamilyinfo, { where: { memberid: Number(id) } });
 
         return updatefamilyinfo;
       }
@@ -38,7 +38,7 @@ class familyinfoService {
   static async getAfamilyinfo(id) {
     try {
       const thefamilyinfo = await database.familyinfo.findOne({
-        where: { id: Number(id) }
+        where: { memberid: Number(id) }
       });
 
       return thefamilyinfo;
@@ -53,7 +53,7 @@ class familyinfoService {
 
       if (familyinfoToDelete) {
         const deletedfamilyinfo = await database.familyinfo.destroy({
-          where: { id: Number(id) }
+          where: { memberid: Number(id) }
         });
         return deletedfamilyinfo;
       }
